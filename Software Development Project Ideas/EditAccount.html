@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Account - Fields & Futures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Left Sidebar -->
+<aside class="sidebar sidebar-left">
+    <div class="nav-group">
+        <a class="nav-item" href="index.html">Back to Homepage</a>
+        <a class="nav-item" href="#">Profile Dashboard</a>
+    </div>
+    <div class="nav-group">
+        <a class="nav-item" href="#">Guidelines</a>
+    </div>
+</aside>
+
+<!-- Main Section -->
+<main class="main-section edit-main">
+    <h1 class="site-title">Edit Account</h1>
+    <!-- Profile Picture + Bio -->
+    <div class="card profile-card edit-center-card">
+        <div class="profile-picture-section">
+            <div class="profile-picture-placeholder">Profile Picture</div>
+            <button class="button">Upload Profile Picture</button>
+        </div>
+        <div class="bio-section">
+            <div class="bio-placeholder">Edit Bio</div>
+        </div>
+    </div>
+</main>
+
+<!-- Right Sidebar -->
+<aside class="sidebar sidebar-right edit-right-sidebar">
+    <!-- Manage Profile Pages -->
+    <div class="card pages-section">
+        <h3 class="panel-title">Manage Profile Pages</h3>
+        <div class="pages-placeholder">
+            <div class="page-item" onclick="selectPage(this, 'Page 1')">Page 1</div>
+            <div class="page-item" onclick="selectPage(this, 'Page 2')">Page 2</div>
+            <div class="page-item" onclick="selectPage(this, 'Page 3')">Page 3</div>
+            <div class="page-item" onclick="selectPage(this, 'Page 4')">Page 4</div>
+        </div>
+        <button class="button">Add New Page</button>
+        <p class="small-text">You can add up to 8 pages and rearrange them.</p>
+    </div>
+
+    <!-- Page Content Editor-->
+    <div class="card page-content-editor" id="page-content-editor">
+        <h3 class="panel-title">Page Content</h3>
+        <div class="editor-placeholder">Click a page above to edit its content</div>
+    </div>
+
+    <!-- Preferences Management-->
+    <div class="card preferences-section">
+        <h3 class="panel-title">Preferences</h3>
+        <div class="preference-item age-range-item">
+            <label>Age Range:</label>
+            <div class="range-slider-container">
+                <!-- Age control slider-->
+                <input type="range" min="18" max="100" value="18" id="slider-min" oninput="updateDualSlider()">
+                <input type="range" min="18" max="100" value="35" id="slider-max" oninput="updateDualSlider()">
+                <div class="slider-track"></div>
+                <div class="slider-range" id="slider-range-fill"></div>
+                <div class="age-display">
+                    <span id="display-min">18</span> - <span id="display-max">35</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function updateDualSlider() {
+                const minSlider = document.getElementById('slider-min');
+                const maxSlider = document.getElementById('slider-max');
+                const minDisplay = document.getElementById('display-min');
+                const maxDisplay = document.getElementById('display-max');
+                const rangeFill = document.getElementById('slider-range-fill');
+                let minVal = parseInt(minSlider.value);
+                let maxVal = parseInt(maxSlider.value);
+
+                if (minVal > maxVal - 1) minVal = maxVal - 1;
+                if (maxVal < minVal + 1) maxVal = minVal + 1;
+                minSlider.value = minVal;
+                maxSlider.value = maxVal;
+                minDisplay.textContent = minVal;
+                maxDisplay.textContent = maxVal;
+
+                const minPercent = ((minVal - minSlider.min) / (minSlider.max - minSlider.min)) * 100;
+                const maxPercent = ((maxVal - maxSlider.min) / (maxSlider.max - maxSlider.min)) * 100;
+                rangeFill.style.left = minPercent + '%';
+                rangeFill.style.width = (maxPercent - minPercent) + '%';
+            }
+            updateDualSlider();
+            function selectPage(element, pageName) {
+                document.querySelectorAll('.page-item').forEach(el => el.classList.remove('selected'));
+                element.classList.add('selected');
+                const editor = document.getElementById('page-content-editor');
+                editor.querySelector('.editor-placeholder').innerText = pageName + " content goes here...";
+            }
+        </script>
+        <div class="preference-item">
+            <label>Preferred Gender:</label>
+            <select id="preferred-gender">
+                <option value="any">Any</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="preference-item">
+            <label>Preferred Location:</label>
+            <select id="preferred-location">
+                <option value="own">Own County</option>
+                <option value="other">Specific County</option>
+                <option value="any">Any</option>
+            </select>
+        </div>
+    </div>
+</aside>
+</body>
+</html>

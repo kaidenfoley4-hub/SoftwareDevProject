@@ -1,5 +1,3 @@
-/* ========= GLOBAL RESET ========= */
-
 * {
     margin: 0;
     padding: 0;
@@ -12,8 +10,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #fdf2f4;
 }
-
-/* ========= LAYOUT STRUCTURE ========= */
 
 .sidebar {
     display: flex;
@@ -41,8 +37,6 @@ body {
     align-items: center;
 }
 
-/* ========= NAVIGATION ========= */
-
 .nav-group {
     display: flex;
     flex-direction: column;
@@ -65,8 +59,6 @@ body {
     background-color: #ffe3e8;
 }
 
-/* ========= TYPOGRAPHY ========= */
-
 .site-title {
     font-size: 3rem;
     color: #c94f7c;
@@ -77,8 +69,6 @@ body {
     margin-bottom: 15px;
     color: #c94f7c;
 }
-
-/* ========= CARDS ========= */
 
 .card {
     background-color: #ffffff;
@@ -96,8 +86,6 @@ body {
     font-size: 1.5rem;
     text-align: center;
 }
-
-/* ========= RIGHT SIDEBAR ========= */
 
 .matches-panel {
     height: 40%;
@@ -141,9 +129,8 @@ body {
     color: white;
     font-size: 2rem;
     font-weight: bold;
+    padding-bottom: 30px;
 }
-
-/* ========= SPLIT PANEL ========= */
 
 .split-panel {
     height: 60%;
@@ -160,12 +147,257 @@ body {
     border-right: 2px solid #e5c7cc;
 }
 
-/* ========= LIST ITEMS ========= */
-
 .list-item {
     padding: 10px;
     border: 2px solid #e5c7cc;
     border-radius: 8px;
     margin-bottom: 10px;
     background-color: #fff7f9;
+}
+
+.profile-picture-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-picture-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #ffe3e8;
+    border: 3px solid #e5c7cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #c94f7c;
+    text-align: center;
+}
+
+.bio-section {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.bio-placeholder {
+    width: 100%;
+    height: 120px;
+    border: 3px solid #e5c7cc;
+    border-radius: 12px;
+    background-color: #fff7f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 1rem;
+}
+
+.pages-section .pages-placeholder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.page-item {
+    padding: 10px;
+    border: 2px solid #e5c7cc;
+    border-radius: 8px;
+    background-color: #fff7f9;
+    flex: 1 1 calc(25% - 10px);
+    text-align: center;
+}
+
+.button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #e5c7cc;
+    background-color: #fff7f9;
+    font-weight: bold;
+    color: #c94f7c;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: #ffe3e8;
+}
+
+.preferences-section .preference-item {
+    margin-bottom: 15px;
+}
+
+.small-text {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+
+.edit-main {
+    width: 55%;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-center-card {
+    width: 90%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.edit-right-sidebar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* space between cards */
+    padding: 20px;
+}
+
+.edit-right-sidebar .matches-panel,
+.edit-right-sidebar .split-panel {
+    display: none;
+}
+
+.edit-right-sidebar .card {
+    flex: 0 0 auto;
+}
+
+.page-content-editor {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+.page-item {
+    padding: 10px;
+    border: 2px solid #e5c7cc;
+    border-radius: 8px;
+    background-color: #fff7f9;
+    flex: 1 1 calc(25% - 10px);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.page-item:hover {
+    background-color: #ffe3e8;
+}
+
+.page-item.selected {
+    border: 3px solid #c94f7c;
+    background-color: #ffd4de;
+}
+
+.page-content-editor {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 300px;
+    max-height: 100%;
+}
+
+.editor-placeholder {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #e5c7cc;
+    border-radius: 12px;
+    background-color: #fff7f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #999;
+    font-size: 1rem;
+}
+
+.range-slider-container input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    position: absolute;
+    pointer-events: all;
+    margin: 0;
+}
+
+.range-slider-container {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #ffe3e8;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slider-range {
+    position: absolute;
+    height: 10px;
+    background: #c94f7c;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.range-slider-container input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: all;
+    z-index: 3;
+}
+
+.range-slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c94f7c;
+    border: 2px solid #e5c7cc;
+    cursor: pointer;
+    margin-top: -4px;
+}
+
+.range-slider-container input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c94f7c;
+    border: 2px solid #e5c7cc;
+    cursor: pointer;
+}
+
+.age-display {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #c94f7c;
 }
