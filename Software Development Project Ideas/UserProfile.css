@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(to right, white, hotpink);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Page title */
+
+h1 {
+    color: #c94f7c;
+    font-size: 3rem;
+}
+
+/* Bootstrap Cards */
+
+.card {
+    border: 3px solid #e5c7cc;
+    border-radius: 12px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card-title {
+    color: #c94f7c;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Form controls */
+
+.form-control,
+.form-select {
+    background-color: #eee;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #e4e4e4;
+    border-color: #c94f7c;
+    box-shadow: 0 0 0 0.2rem rgba(201, 79, 124, 0.25);
+}
+
+/* Interests */
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff7f9;
+    border: 2px solid #e5c7cc;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.interest-item:hover {
+    background-color: #ffe3e8;
+}
+
+.interest-item input[type="checkbox"] {
+    accent-color: #c94f7c;
+}
+
+/* Save button */
+
+.btn-pink {
+    background-color: lightpink;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 1s;
+}
+
+.btn-pink:hover {
+    background-color: deeppink;
+    color: #fff;
+}
+
+/* Profile completion banner */
+
+.alert-completeness {
+    background-color: #fff7f9;
+    border: 2px solid #e5c7cc;
+    border-radius: 12px;
+    color: #c94f7c;
+}
+
+.progress {
+    background-color: #eee;
+    border-radius: 10px;
+    height: 12px;
+}
+
+.progress-bar {
+    background-color: #c94f7c;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* Active toggle */
+
+.form-check-input:checked {
+    background-color: #c94f7c;
+    border-color: #c94f7c;
+}
+
+/* Uploaded photo thumbnails */
+
+.photo-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e5c7cc;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Profile picture preview */
+
+.profile-photo-preview-box {
+    width: 220px;
+    height: 220px;
+    min-width: 220px;
+    border: 4px solid #c94f7c;
+    border-radius: 12px;
+    background-color: #fff7f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 6px 6px 16px rgba(201, 79, 124, 0.15);
+}
+
+.profile-photo-preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile-photo-preview-box .text-muted {
+    font-size: 13px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Incomplete error banner */
+
+.alert-validation {
+    background-color: #fff0f3;
+    border: 2px solid #e63946;
+    border-radius: 10px;
+    color: #c0152a;
+}
+
+.alert-validation ul {
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+/* Required fields */
+
+.required-star {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.required-note {
+    color: #888;
+    font-size: 14px;
+}
