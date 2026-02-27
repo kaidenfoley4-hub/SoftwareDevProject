@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intentional Dating Login & Registration</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-box active" id="login-form">
+            <form action="">
+                <h2>Login</h2>
+                <label>
+                    <input type="text" placeholder="Username/Email" name="username/email" required>
+                </label>
+                <label>
+                    <input type="password" placeholder="Password" name="password" required>
+                </label>
+                <button type="submit" name="login">Login</button>
+                <p>Don't have an Account? <a href="#" onclick="showFrom('Register-form')">Register</a></p>
+            </form>
+        </div>
+
+        <div class="form-box" id="Register-form">
+            <form action="">
+                <h2>Register</h2>
+                <label>
+                    <input type="text" placeholder="Username" name="username" required>
+                </label>
+                <label>
+                    <input type="text" placeholder="Email" name="email" required>
+                </label>
+                <label>
+                    <input type="password" placeholder="Password" name="password" required>
+                </label>
+                <button type="submit" name="register">Register</button>
+                <p>Already have an account? <a href="#" onclick="showFrom('login-form')">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="Login.js"></script>
+</body>
+</html>
