@@ -1,0 +1,171 @@
+/* ========= GLOBAL RESET ========= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #fdf2f4;
+}
+
+/* ========= LAYOUT STRUCTURE ========= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.sidebar-left {
+    width: 15%;
+    padding: 20px;
+    border-right: 2px solid #e5c7cc;
+}
+
+.sidebar-right {
+    width: 30%;
+}
+
+.main-section {
+    width: 55%;
+    padding: 20px 40px;
+    border-right: 2px solid #e5c7cc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ========= NAVIGATION ========= */
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #e5c7cc;
+    border-radius: 8px;
+    background-color: #fff7f9;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #ffe3e8;
+}
+
+/* ========= TYPOGRAPHY ========= */
+
+.site-title {
+    font-size: 3rem;
+    color: #c94f7c;
+    margin-bottom: 30px;
+}
+
+.panel-title {
+    margin-bottom: 15px;
+    color: #c94f7c;
+}
+
+/* ========= CARDS ========= */
+
+.card {
+    background-color: #ffffff;
+    border: 3px solid #e5c7cc;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.profile-card {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* ========= RIGHT SIDEBAR ========= */
+
+.matches-panel {
+    height: 40%;
+    border-bottom: 2px solid #e5c7cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.heart {
+    width: 120px;
+    height: 110px;
+    background-color: #e63946;
+    position: relative;
+    transform: rotate(-45deg);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 120px;
+    height: 110px;
+    background-color: #e63946;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -60px;
+    left: 0;
+}
+
+.heart::after {
+    left: 60px;
+    top: 0;
+}
+
+.heart-number {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ========= SPLIT PANEL ========= */
+
+.split-panel {
+    height: 60%;
+    display: flex;
+}
+
+.panel {
+    width: 50%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.panel:first-child {
+    border-right: 2px solid #e5c7cc;
+}
+
+/* ========= LIST ITEMS ========= */
+
+.list-item {
+    padding: 10px;
+    border: 2px solid #e5c7cc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fff7f9;
+}
