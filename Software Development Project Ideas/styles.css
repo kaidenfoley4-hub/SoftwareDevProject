@@ -401,3 +401,48 @@ body {
     font-weight: bold;
     color: #c94f7c;
 }
+
+.guidelines-placeholder {
+    width: 100%;
+    height: 650px;
+    border: 3px solid #e5c7cc;
+    border-radius: 12px;
+    background-color: #fff7f9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    color: #999;
+    font-size: 1rem;
+}
+
+.guidelines-placeholder h2 {
+    text-align: center;
+    color: #c94f7c;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.guidelines-placeholder p {
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.guidelines-placeholder ul {
+    width: 90%;
+    padding-left: 40px;
+    padding: 20px;
+    color: #555;
+    line-height: 2;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.guidelines-placeholder ul li {
+    margin-bottom: 8px;
+}
