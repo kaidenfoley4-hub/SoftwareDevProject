@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="88e6446c-3d1f-4cb1-8b80-2424345e4518" name="Intentional-Dating" url="http://localhost/Software-Dev">
+        <fileTransfer mountedRoot="D:\xampp\htdocs\Software-Dev" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
