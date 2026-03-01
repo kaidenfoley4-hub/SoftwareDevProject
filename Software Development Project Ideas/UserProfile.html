@@ -17,11 +17,11 @@
     <h1 class="text-center mb-4">My Profile</h1>
     <p class="required-note text-center mb-3">Fields marked with <span class="required-star">*</span> are required.</p>
 
-    <!-- Completion progress bar, updated by javascript dynamically -->
+    <!-- Completion progress bar, updated by JavaScript dynamically -->
     <div class="alert alert-completeness mb-4" id="completeness-banner">
         <strong>Profile Completeness: <span id="completeness-score">0%</span></strong>
         <div class="progress mt-2">
-            <div class="progress-bar" id="completeness-bar" role="progressbar" style="width: 0%;"></div>
+            <div class="progress-bar" id="completeness-bar" role="progressbar" style="width: 0;"></div>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                         <input type="file" id="profile-photo" accept="image/*" class="form-control" onchange="previewProfilePhoto(event); updateCompleteness();">
                     </div>
                     <div id="profile-photo-preview-box" class="profile-photo-preview-box">
-                        <img id="profile-photo-preview" src="" alt="" style="display:none;"> <!-- javascript swaps this value when a photo is selected -->
+                        <img id="profile-photo-preview" src="" alt="" style="display:none;"> <!-- JavaScript swaps this value when a photo is selected -->
                         <span id="profile-photo-placeholder" class="text-muted">No photo</span>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 
             <!-- Preview for photos -->
             <div id="photo-preview-grid" class="row g-2 mb-3" style="display:none;">
-                <!-- previews are inserted her by javascript -->
+                <!-- previews are inserted her by JavaScript -->
             </div>
 
             <div class="mb-3">
@@ -81,13 +81,30 @@
             </div>
 
             <div class="mb-3">
-                <label for="sex" class="form-label">Sex</label>
-                <select id="sex" class="form-select">
-                    <option value="">Select sex</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
+                <label for="gender" class="form-label">Gender</label>
+                <select id="gender" class="form-select">
+                    <option value="">Select Gender</option>
+                    <option value="Agender">Agender</option>
+                    <option value="Androgynous">Androgynous</option>
+                    <option value="Bigender">Bigender</option>
+                    <option value="Gender-Fluid">Gender Fluid</option>
+                    <option value="Gender-Nonconforming">Gender Nonconforming</option>
+                    <option value="Genderqueer">Genderqueer</option>
+                    <option value="Gender-Questioning">Gender Questioning</option>
+                    <option value="Intersex">Intersex</option>
+                    <option value="Man">Man</option>
+                    <option value="Non-Binary">Non-Binary</option>
+                    <option value="Other">Other</option>
+                    <option value="Pangender">Pangender</option>
                     <option value="prefer-not">Prefer not to say</option>
+                    <option value="Transfeminine">Transfeminine</option>
+                    <option value="Transmasculine">Transmasculine</option>
+                    <option value="Trans-Person">Trans Person</option>
+                    <option value="Trans-Man">Trans Man</option>
+                    <option value="Trans-Non-Binary">Trans Non-Binary</option>
+                    <option value="Trans-Woman">Trans-Woman</option>
+                    <option value="Two-Spirit">Two-Spirit</option>
+                    <option value="Woman">Woman</option>
                 </select>
             </div>
 
@@ -97,11 +114,11 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Reputation Score</label>
-                <input type="text" class="form-control" id="reputation_score" disabled placeholder="Calculated automatically">
-                <small class="text-muted">Your reputation score is visible on your profile but cannot be manually set.</small>
+                <label class="form-label">Reputation Score
+                    <input type="text" class="form-control" id="reputation_score" disabled placeholder="Calculated automatically">
+                    <small class="text-muted">Your reputation score is visible on your profile but cannot be manually set.</small>
+                </label>
             </div>
-
         </div>
     </div>
 
@@ -109,26 +126,43 @@
     <!-- Match Preferences -->
     <div class="card mb-4">
         <div class="card-body">
-            <h2 class="card-title">Match Preferences</h2>
+            <h2 class="card-title">Search Settings</h2>
             <p class="text-muted">Tell us what you are looking for in a potential match.</p>
 
             <div class="mb-3">
-                <label for="pref_age_min" class="form-label">Preferred Age Range</label>
                 <div class="d-flex gap-2 align-items-center">
-                    <input type="number" id="pref_age_min" class="form-control" placeholder="Min age" min="18" max="99">
-                    <span>to</span>
-                    <input type="number" id="pref_age_max" class="form-control" placeholder="Max age" min="18" max="99">
+                    <label for="pref_age_min" class="form-label">Preferred Age Range
+                        <input type="number" id="pref_age_min" class="form-control" placeholder="Min age" min="18" max="99">
+                        <span>to</span>
+                        <input type="number" id="pref_age_max" class="form-control" placeholder="Max age" min="18" max="99">
+                    </label>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="pref_sex" class="form-label">Preferred Sex</label>
-                <select id="pref_sex" class="form-select">
-                    <option value="">Select preference</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
+                <label for="Sexuality" class="form-label">Sexuality</label>
+                <select id="Sexuality" class="form-select">
+                    <option value="">Select Sexuality</option>
+                    <option value="Androgynosexual">Androgynosexual</option>
+                    <option value="Androsexual">Androsexual</option>
+                    <option value="Asexual">Asexual</option>
+                    <option value="Autosexual">Autosexual</option>
+                    <option value="Bisexual">Bisexual</option>
+                    <option value="Bi-curious">Bi-curious</option>
+                    <option value="Demisexual">Demisexual</option>
+                    <option value="Gay">Gay</option>
+                    <option value="GrayA">GrayA</option>
+                    <option value="Heteroflexible">Heteroflexible</option>
+                    <option value="Homoflexible">Homoflexible</option>
+                    <option value="Lesbian">Lesbian</option>
                     <option value="no-preference">No preference</option>
+                    <option value="Objectumsexual">Objectumsexual</option>
+                    <option value="Omnisexual">Omnisexual</option>
+                    <option value="Pansexual">Pansexual</option>
+                    <option value="Polysexual">Polysexual</option>
+                    <option value="Queer">Queer</option>
+                    <option value="Skoliosexual">Skoliosexual</option>
+                    <option value="Straight">Straight</option>
                 </select>
             </div>
 
@@ -202,7 +236,7 @@
 
 </div>
 
-<!-- Loading the bootstrap javascript bundle from CDN -->
+<!-- Loading the bootstrap JavaScript bundle from CDN -->
 <!-- best to be place towards the end as page will load faster from perception of the user -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
