@@ -1,7 +1,7 @@
 Ideas
 Themes
 	Culinary matching (leftovers club)
-	Alumni only plattform (ULoveToSeeIt)
+	Alumni only platform (ULoveToSeeIt)
 	.
 	Fields & Futures - Rural, intentional dating 
 
@@ -22,7 +22,7 @@ Features
 	Interest heatmap/ correlation matrix - maybe
 	.
 	Read receipts for messages - yes
-	Icebreaker suggestion engine- maybe
+	Icebreaker suggestion engine - maybe
 	Reputation score per profile - yep
 	Overview dashboard per user - maybe
 	Overview dashboard for admin - yes
@@ -55,18 +55,18 @@ User table set-up
 	- PICS
 	- Layout of their profile - windows
 
-USER INTRESTS TABLE
+USER INTERESTS TABLE
 	- user_id (UNIQUE)
 	- user_type - Sporty, gamer, adventurer
 	- user_Preferred_Type - ALL, outdoors/outgoing, Quiet/easygoing, etc
 	- user_Interest1 - First preference interest stored as a string (E.G FISHING)
-	- user_Interest2 - Second preference interest stored as a string (E.G ROCKCLIMBING)
+	- user_Interest2 - Second preference interest stored as a string (E.G ROCK CLIMBING)
 	- user_Interest3 - Third preference interest stored as a string (E.G GAMING)
 
 Preferences table
 - user_id 
 - age
-- sex
+- Gender
 - location
 - reputation_score - thresholds- 50%, 80%+
 
