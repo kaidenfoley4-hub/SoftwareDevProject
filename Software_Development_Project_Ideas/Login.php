@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+$errors = [
+        'login' => isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '',
+        'register' => isset($_SESSION['register_error']) ? $_SESSION['register_error'] : ''
+];
+$activeForm = isset($_SESSION['active_form']) ? $_SESSION['active_form'] : 'login';
+
+session_unset();
+
+function showError($error) {
+    return !empty($error) ? '<div class="alert alert-danger" role="alert">'.$error.'</div>' : '';
+}
+
+function isActiveForm($formName, $activeForm) {
+    return $formName === $activeForm ? 'active' : '';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +30,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="form-box active" id="login-form">
-            <form action="">
+        <div class="form-box <?= isActiveForm('login',$activeForm);?>" id="login-form">
+            <form action="login_register.php" method="post">
                 <h2>Login</h2>
+                <?= showError($errors['login']); ?>
                 <label>
                     <input type="text" placeholder="Username/Email" name="username/email" required>
                 </label>
@@ -23,9 +46,10 @@
             </form>
         </div>
 
-        <div class="form-box" id="Register-form">
-            <form action="">
+        <div class="form-box <?= isActiveForm('register',$activeForm);?>"" id="Register-form">
+            <form action="login_register.php" method="post">
                 <h2>Register</h2>
+                <?= showError($errors['register']); ?>
                 <label>
                     <input type="text" placeholder="Username" name="username" required>
                 </label>
@@ -41,7 +65,6 @@
                 <p>Already have an account? <a href="#" onclick="showFrom('login-form')">Login</a></p>
             </form>
         </div>
-    </div>
     <script src="Login.js"></script>
 </body>
 </html>

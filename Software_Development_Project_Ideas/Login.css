@@ -81,3 +81,13 @@ p a{
 p a:hover{
     text-decoration: underline;
 }
+
+.alert{
+    padding: 16px;
+    background: black;
+    border-radius: 6px;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
