@@ -83,15 +83,26 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Google-based UI mockups
 
-#### Basic Prototype for matching page
-
 #### Login page
 
-#### Profile Edit page
+![Loginpage](Photos\LoginPage.png)
 
-#### Messaging preview
+#### Register page
 
-#### Admin page
+![Registerpage](Photos\RegisterPage.png)
+
+#### My Profile page section
+
+![MyProfile1](Photos\MyProfile1.png)
+![MyProfile2](Photos\MyProfile2.png)
+
+#### Edit Account page
+
+![EditAccount](Photos\EditAccountpage.png)
+
+#### Guidelines page
+
+![Guidelines](Photos\GuidelinePage.png)
 
 ## Database Tables
 
