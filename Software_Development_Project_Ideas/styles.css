@@ -73,14 +73,16 @@ body {
 .card {
     background-color: #ffffff;
     border: 3px solid #e5c7cc;
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    flex:1;
 }
 
 .profile-card {
     width: 80%;
     height: 70%;
     display: flex;
+    flex:1;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
@@ -178,7 +180,8 @@ body {
 }
 
 .bio-section {
-    width: 100%;
+    height: 100%;
+    width:100%;
     margin-top: 15px;
 }
 
@@ -403,15 +406,21 @@ body {
 }
 
 .guidelines-placeholder {
-    width: 100%;
-    height: 650px;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    min-height: 0; 
     border: 3px solid #e5c7cc;
+    overflow-y: auto; 
+    box-sizing: border-box;
     border-radius: 12px;
     background-color: #fff7f9;
     display: flex;
+    flex:1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    word-break: break-word;
     padding: 20px;
     color: #999;
     font-size: 1rem;
@@ -422,15 +431,16 @@ body {
     color: #c94f7c;
     margin-bottom: 15px;
     width: 100%;
+    flex: 1;
 }
 
 .guidelines-placeholder p {
     text-align: center;
     width: 100%;
-    font-size: 1rem;
     color: #555;
     margin-bottom: 20px;
     line-height: 1.6;
+    flex: 1;
 }
 
 .guidelines-placeholder ul {
@@ -438,10 +448,12 @@ body {
     padding: 20px;
     color: #555;
     line-height: 2;
-    font-size: 1rem;
     text-align: left;
+    flex: 1;
 }
 
 .guidelines-placeholder ul li {
     margin-bottom: 8px;
+    flex: 1;
+    padding:5px;
 }
