@@ -62,8 +62,10 @@
             <label>Age Range:</label>
             <div class="range-slider-container">
                 <!-- Age control slider-->
-                <input type="range" min="18" max="100" value="18" id="slider-min" oninput="updateDualSlider()">
-                <input type="range" min="18" max="100" value="35" id="slider-max" oninput="updateDualSlider()">
+                <label>
+                    <input type="range" min="18" max="100" value="18" id="slider-min" oninput="updateDualSlider()">
+                    <input type="range" min="18" max="100" value="35" id="slider-max" oninput="updateDualSlider()">
+                </label>
                 <div class="slider-track"></div>
                 <div class="slider-range" id="slider-range-fill"></div>
                 <div class="age-display">
@@ -102,20 +104,40 @@
             }
         </script>
         <div class="preference-item">
-            <label>Preferred Gender:</label>
-            <select id="preferred-gender">
-                <option value="any">Any</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+            <label>Sexuality:
+                <select id="Sexuality">
+                    <option value="">Select Sexuality</option>
+                    <option value="Androgynosexual">Androgynosexual</option>
+                    <option value="Androsexual">Androsexual</option>
+                    <option value="Asexual">Asexual</option>
+                    <option value="Autosexual">Autosexual</option>
+                    <option value="Bisexual">Bisexual</option>
+                    <option value="Bi-curious">Bi-curious</option>
+                    <option value="Demisexual">Demisexual</option>
+                    <option value="Gay">Gay</option>
+                    <option value="GrayA">GrayA</option>
+                    <option value="Heteroflexible">Heteroflexible</option>
+                    <option value="Homoflexible">Homoflexible</option>
+                    <option value="Lesbian">Lesbian</option>
+                    <option value="no-preference">No preference</option>
+                    <option value="Objectumsexual">Objectumsexual</option>
+                    <option value="Omnisexual">Omnisexual</option>
+                    <option value="Pansexual">Pansexual</option>
+                    <option value="Polysexual">Polysexual</option>
+                    <option value="Queer">Queer</option>
+                    <option value="Skoliosexual">Skoliosexual</option>
+                    <option value="Straight">Straight</option>
+                </select>
+            </label>
         </div>
         <div class="preference-item">
-            <label>Preferred Location:</label>
-            <select id="preferred-location">
-                <option value="own">Own County</option>
-                <option value="other">Specific County</option>
-                <option value="any">Any</option>
-            </select>
+            <label>Preferred Location:
+                <select id="preferred-location">
+                    <option value="own">Own County</option>
+                    <option value="other">Specific County</option>
+                    <option value="any">Any</option>
+                </select>
+            </label>
         </div>
     </div>
 </aside>
