@@ -2,7 +2,7 @@
 
 const trackedFields = [
     "profile-photo",
-    "name", "bio", "age", "sex", "location",
+    "name", "bio", "age", "gender", "location",
     "user_type", "user_interest1", "user_interest2", "user_interest3"
 ];
 
