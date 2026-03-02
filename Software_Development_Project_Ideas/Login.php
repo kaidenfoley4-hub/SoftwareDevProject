@@ -17,7 +17,6 @@ function showError($error) {
 function isActiveForm($formName, $activeForm) {
     return $formName === $activeForm ? 'active' : '';
 }
-
 ?>
 
 <!DOCTYPE html>

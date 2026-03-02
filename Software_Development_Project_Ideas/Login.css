@@ -84,10 +84,10 @@ p a:hover{
 
 .alert{
     padding: 16px;
-    background: black;
+    background: deeppink;
     border-radius: 6px;
     font-size: 16px;
-    color: red;
+    color: darkgray;
     text-align: center;
     margin-bottom: 20px;
 }
