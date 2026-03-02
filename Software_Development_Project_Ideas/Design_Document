@@ -17,7 +17,50 @@ Our dating platform, Fields & Futures, is designed to support meaningful, long-t
 
 ### Required Functionality
 
+#### User Registration & Profile 
 
+- Create an account and log in securely
+- Create and edit a personal profile
+- Provide details such as description, interests, preferences, and basic information
+
+Passwords **must not be stored in plain text**
+
+#### Browsing & Searching
+
+- Browse other users 
+- Search using multiple criteria 
+- Apply filters and sorting
+
+Search functionality must be implemented using database queries, not manual filtering in PHP
+
+#### Matching & Connecting
+
+- Express interest in another user
+- Form a connection only if both users indicate interest
+- View existing matches
+- Complain about harassment from users
+- Block other users
+
+#### Messaging
+
+Matched users must be able to communicate through an **internal messaging system**. The system should identify and prevent users from sending phone numbers through the messaging system - we want to keep users on our site as much as possible!
+
+#### Administrative Controls
+
+- Ban or suspend users
+- Remove inappropriate content
+- Edit user profile
+
+#### Security 
+
+- Password hashing
+- Secure session handling
+- Input validation and sanitisation
+- Protection against basic SQL injection
+- No fatal runtime errors
+- No hard-coded credentials 
+- Clean and consistent navigation
+- Logical file structure
 
 ### Additional Functionality
 
