@@ -64,6 +64,21 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Additional Functionality
 
+#### Intentional Dating
+
+- Including guidelines on how to do Intentional dating
+- Setting a limit for number of matches at a time
+- Setting a limit for the number of messages between two accounts
+
+#### Compatibility score
+
+- Based on interests, location & sexuality show relevant profiles
+
+#### Ice-Breakers
+
+- Prompt users with Ice-Breakers
+- When reaching message limit prompt users with date ideas
+
 ## WebPage Mockups
 
 ### Google-based UI mockups
@@ -80,15 +95,63 @@ Matched users must be able to communicate through an **internal messaging system
 
 ## Database Tables
 
-### Login Table
+### User set-up Table
 
-### Profile Table
+| Field           | Type    | KeyType |
+|-----------------|---------|---------|
+| user_id         | Int     | Unique  |
+| username        | Varchar |         |
+| password_hash   | Varchar |         |
+| role            | ENUM    |         |
+| is_active       | boolean |         |
+| created_at      |         |         |
+| last_login_at   |         |         |
+| is_banned       | boolean |         |
+| Personal folder |         |         |
 
-### Images Table
+### User Interests Table
+
+| Field               | Type    | KeyType |
+|---------------------|---------|---------|
+| user_id             | Int     | Unique  |
+| user_type           | Varchar |         |
+| user_preferred_type | Varchar |         |
+| user_interest1      | Varchar |         |
+| user_interest2      | Varchar |         |
+| user_interest3      | Varchar |         |
+
+### Details Table
+
+| Field            | Type    | KeyType |
+|------------------|---------|---------|
+| user_id          | Int     | Unique  |
+| age              | Int     |         |
+| Gender           | Varchar |         |
+| Location         | Varchar |         |
+| Reputation_score | Int     |         |
+
 
 ### Matches Table
 
+| Field           | Type | KeyType |
+|-----------------|------|---------|
+| user_id         | Int  | Unique  |
+| match_date      |      |         |
+| response        |      |         |
+| account_matcher |      |         |
+| account_matched |      |         |
+
+
 ### Chat Table
+
+| Field   | Type | KeyType |
+|---------|------|---------|
+| user_id | Int  | Unique  |
+| date    |      |         |
+| user    |      |         |
+| message |      |         |
+| image   |      |         |
+
 
 ## Process Chart List
 
