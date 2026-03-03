@@ -53,8 +53,6 @@ body {
     background-color: #fff7f9;
     text-align: center;
     transition: 0.2s;
-    height:1;
-    width:1;
 }
 
 .nav-item:hover {
