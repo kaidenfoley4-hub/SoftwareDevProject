@@ -107,61 +107,97 @@ Matched users must be able to communicate through an **internal messaging system
 ## Database Tables
 
 ### User set-up Table
+| Field            | Type                                       | KeyType |
+| ---------------- | ------------------------------------------ | ------- |
+| user_id          | INT                                        | PK      |
+| username         | VARCHAR                                    | UNIQUE  |
+| email            | VARCHAR                                    | UNIQUE  |
+| password_hash    | VARCHAR                                    |         |
+| role             | ENUM('user','admin')                       |         |
+| gender           | ENUM('male','female','non_binary','other') |         |
+| date_of_birth    | DATE                                       |         |
+| country          | VARCHAR                                    |         |
+| bio              | TEXT                                       |         |
+| reputation_score | INT                                        |         |
+| is_active        | BOOLEAN                                    |         |
+| is_banned        | BOOLEAN                                    |         |
+| created_at       | TIMESTAMP                                  |         |
+| last_login_at    | TIMESTAMP                                  |         |
+| deleted_at       | TIMESTAMP (nullable)                       |         |
 
-| Field           | Type    | KeyType |
-|-----------------|---------|---------|
-| user_id         | Int     | Unique  |
-| username        | Varchar |         |
-| password_hash   | Varchar |         |
-| role            | ENUM    |         |
-| is_active       | boolean |         |
-| created_at      |         |         |
-| last_login_at   |         |         |
-| is_banned       | boolean |         |
-| Personal folder |         |         |
+### Permissible Interests Table
+| Field         | Type    | KeyType |
+| ------------- | ------- | ------- |
+| interest_id   | INT     | PK      |
+| interest_name | VARCHAR | UNIQUE  |
 
-### User Interests Table
+### User interest Table
+| Field       | Type | KeyType                        |
+| ----------- | ---- | ------------------------------ |
+| user_id     | INT  | PK, FK → users.user_id         |
+| interest_id | INT  | PK, FK → interests.interest_id |
 
-| Field               | Type    | KeyType |
-|---------------------|---------|---------|
-| user_id             | Int     | Unique  |
-| user_type           | Varchar |         |
-| user_preferred_type | Varchar |         |
-| user_interest1      | Varchar |         |
-| user_interest2      | Varchar |         |
-| user_interest3      | Varchar |         |
 
-### Details Table
+### Preferences Table
+| Field             | Type                                             | KeyType                |
+| ----------------- | ------------------------------------------------ | ---------------------- |
+| user_id           | INT                                              | PK, FK → users.user_id |
+| min_age           | INT                                              |                        |
+| max_age           | INT                                              |                        |
+| preferred_gender  | ENUM('male','female','non_binary','other','any') |                        |
+| preferred_country | VARCHAR                                          |                        |
 
-| Field            | Type    | KeyType |
-|------------------|---------|---------|
-| user_id          | Int     | Unique  |
-| age              | Int     |         |
-| Gender           | Varchar |         |
-| Location         | Varchar |         |
-| Reputation_score | Int     |         |
 
+### Likes Table
+| Field      | Type      | KeyType                |
+| ---------- | --------- | ---------------------- |
+| liker_id   | INT       | PK, FK → users.user_id |
+| liked_id   | INT       | PK, FK → users.user_id |
+| created_at | TIMESTAMP |                        |
 
 ### Matches Table
+| Field      | Type                                 | KeyType            |
+| ---------- | ------------------------------------ | ------------------ |
+| match_id   | INT                                  | PK                 |
+| user1_id   | INT                                  | FK → users.user_id |
+| user2_id   | INT                                  | FK → users.user_id |
+| status     | ENUM('active','unmatched','blocked') |                    |
+| created_at | TIMESTAMP                            |                    |
+| updated_at | TIMESTAMP                            |                    |
+| deleted_at | TIMESTAMP (nullable)                 |                    |
 
-| Field           | Type | KeyType |
-|-----------------|------|---------|
-| user_id         | Int  | Unique  |
-| match_date      |      |         |
-| response        |      |         |
-| account_matcher |      |         |
-| account_matched |      |         |
+### Messages Table
+| Field        | Type                 | KeyType               |
+| ------------ | -------------------- | --------------------- |
+| message_id   | INT                  | PK                    |
+| match_id     | INT                  | FK → matches.match_id |
+| sender_id    | INT                  | FK → users.user_id    |
+| message_text | TEXT                 |                       |
+| is_read      | BOOLEAN              |                       |
+| created_at   | TIMESTAMP            |                       |
+| deleted_at   | TIMESTAMP (nullable) |                       |
 
 
-### Chat Table
+### Blocks Table
+| Field      | Type      | KeyType            |
+| ---------- | --------- | ------------------ |
+| block_id   | INT       | PK                 |
+| blocker_id | INT       | FK → users.user_id |
+| blocked_id | INT       | FK → users.user_id |
+| created_at | TIMESTAMP |                    |
 
-| Field   | Type | KeyType |
-|---------|------|---------|
-| user_id | Int  | Unique  |
-| date    |      |         |
-| user    |      |         |
-| message |      |         |
-| image   |      |         |
+
+### Reports Table
+| Field            | Type                                    | KeyType            |
+| ---------------- | --------------------------------------- | ------------------ |
+| report_id        | INT                                     | PK                 |
+| reporter_id      | INT                                     | FK → users.user_id |
+| reported_user_id | INT                                     | FK → users.user_id |
+| message_id       | INT (nullable FK → messages.message_id) |                    |
+| reason           | TEXT                                    |                    |
+| status           | ENUM('open','reviewed','dismissed')     |                    |
+| created_at       | TIMESTAMP                               |                    |
+
 
 
 ## Process Chart List
