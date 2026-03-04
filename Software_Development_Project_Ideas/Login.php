@@ -54,7 +54,7 @@ function isActiveForm($formName, $activeForm) {
                 </label>
                 <label>
                     <!--Password Field-->
-                    <input type="text" placeholder="Email" name="email" required>
+                    <input type="text" placeholder="Email" name="email" pattern="/^[a-zA-Z0–9._%+-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,}$/" required>
                 </label>
                 <label>
                     <input type="password" placeholder="Password" name="password" required>
