@@ -82,5 +82,5 @@ Photographs Web server
 Phpstorm Move to a Remote webserver
 What will be the submission form
 Tables? Each table should be specific
-Chatgpt prompts
+ChatGPT prompts
 Plant UML
