@@ -258,7 +258,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### createAccount
 
-| Process No.          | 17                                                                                           |
+| Process No.          | 16                                                                                           |
 |----------------------|----------------------------------------------------------------------------------------------|
 | Title                | Create a New User Account                                                                    |
 | Brief Description    | Adds a new user to the User Set-up table                                                     |
@@ -267,7 +267,24 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               | User gets redirected to the profile page.                                                    |
 
 ### setProfilePhoto
+
+| Process No.          | 17                                                                                                                                                                                                                      |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | Sets a Users Profile Photo                                                                                                                                                                                              |
+| Brief Description    | Adds a new profile photo to the users profile                                                                                                                                                                           |
+| Inputs               | Profile Image                                                                                                                                                                                                           |
+| Detailed Description | The user can add a profile picture at account creation and this will appear when other users view their profile. It can be changed after account creation by uploading a new image. It is associated with their user_id |
+| Output               | None                                                                                                                                                                                                                    |
+
 ### get ProfilePhoto
+
+| Process No.          | 18                                                                                                                                                                                                            |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | Returns a Users Profile Photo                                                                                                                                                                                 |
+| Brief Description    | Returns a users profile photo when their profile is being viewed                                                                                                                                              |
+| Inputs               | User_id                                                                                                                                                                                                       |
+| Detailed Description | When a user is viewing another users profile, their profile picture is returned to be displayed. This also occurs when a user looks at their own profile. The profile photo is associated with their user_id. |
+| Output               | Profile Photo                                                                                                                                                                                                 |
 
 ### setAdditionalPhotos
 ### getAdditionalPhotos
