@@ -222,6 +222,8 @@ Matched users must be able to communicate through an **internal messaging system
 
 #### Profile viewing
 
+
+
 ## Process Tables
 
 ### sendLike
@@ -240,9 +242,9 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### getMessages
 
-### setEmail
+### changeEmail
 
-### setPassword
+### changePassword
 
 ### getAccount
 
@@ -250,12 +252,47 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### modifyProfile
 
-### setName
-
-### getName
-
 ### setVisible
+
+### getImage
 
 ### createAccount
 
-### getImage
+| Process No.          | 17                                                                                           |
+|----------------------|----------------------------------------------------------------------------------------------|
+| Title                | Create a New User Account                                                                    |
+| Brief Description    | Adds a new user to the User Set-up table                                                     |
+| Inputs               | User Email & Password                                                                        |
+| Detailed Description | Adds a new user to the database, assigning them a unique user_id and hashing their password. |
+| Output               | User gets redirected to the profile page.                                                    |
+
+### setProfilePhoto
+### get ProfilePhoto
+
+### setAdditionalPhotos
+### getAdditionalPhotos
+
+### setBio
+### getBio
+
+### setName
+### getName
+
+### setAge
+### getAge
+
+### setGender
+### getGender
+
+### setLocation
+### getLocation
+
+### calculateReputation
+### getReputation
+
+### setType
+### getType
+
+### setInterests
+### getInterests
+
