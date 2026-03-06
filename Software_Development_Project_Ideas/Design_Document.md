@@ -239,109 +239,448 @@ Matched users must be able to communicate through an **internal messaging system
 
 #### Profile viewing
 
-
-
 ## Process Tables
 
-### registrationValidation
+| Process No.          | 1                                                                                                                                                                                                                                                                                                                                     |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | registrationValidation                                                                                                                                                                                                                                                                                                                |
+| Brief Description    | Validates a users credentials when registering                                                                                                                                                                                                                                                                                        |
+| Inputs               | Username, Email, Password                                                                                                                                                                                                                                                                                                             |
+| Detailed Description | Validates that an account does not already exist with the username or email a user is attempting to register with. If an account exists in the database with either of these an error pops up and the user is prompted to enter new credentials. If these credentials are not found, the createAccount process is allowed to proceed. |
+| Outputs              | None                                                                                                                                                                                                                                                                                                                                  |
 
-### createAccount
 
 | Process No.          | 2                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------|
-| Title                | Create a New User Account                                                                    |
-| Brief Description    | Adds a new user to the User Set-up table                                                     |
-| Inputs               | User Email & Password                                                                        |
+| Title                | createAccount                                                                                |
+| Brief Description    | Creates a new user account after successful registration                                     |
+| Inputs               | Username, Email, Password                                                                    |
 | Detailed Description | Adds a new user to the database, assigning them a unique user_id and hashing their password. |
-| Output               | User gets redirected to the profile page.                                                    |
+| Output               | User gets prompted to login using their credentials                                          |
 
-### getAccount
 
-### loginValidation
+| Process No.          | 3                                                                                                                                           |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | loginValidation                                                                                                                             |
+| Brief Description    | Validates a users credentials when attempting to log in                                                                                     |
+| Inputs               | Username/Email, Password                                                                                                                    |
+| Detailed Description | Validates that the username/email and password entered match an existing account. Returns a boolean depending on the success of this check. |
+| Output               | Boolean True/False to indicate if login should be allowed.                                                                                  |
 
-### firstLogin
 
-### setCompleteness
+| Process No.          | 4                                                                                                                     |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Title                | profileSetup                                                                                                          |
+| Brief Description    | Checks if a users profile has been setup.                                                                             |
+| Inputs               | Email/Username                                                                                                        |
+| Detailed Description | When a user is logging in, their credentials are checked to see if their account has had its profile setup completed. |
+| Output               | Boolean True/False to indicate if the user should be sent to the inital profile setup page or the websites home page. |
 
-### requiredCheck
 
-### saveProfile
-### getProfile
+| Process No.          | 5                                                                                                                                                               |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | loginUser                                                                                                                                                       |
+| Brief Description    | Logs a user into the website                                                                                                                                    |
+| Inputs               | loginValidation Boolean, profileSetup Boolean                                                                                                                   |
+| Detailed Description | Based on the values returned from processes 3 and 4, this process will either deny or allow a user to be logged in, and send them to the page relevant to them. |
+| Output               | User is either logged in or denied. If logged in they are sent to the initial profile setup if it has not yet been completed or the website homepage if it has. |
 
-### changeEmail
-### changePassword
 
-### setProfilePhoto
+| Process No.          | 6                                                                                                                                                                                          |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | setCompleteness                                                                                                                                                                            |
+| Brief Description    | Sets the completeness percentage of a users profile.                                                                                                                                       |
+| Inputs               | Profile Photo, Bio, Name, Age, Gender, Location, Type, Interests                                                                                                                           |
+| Detailed Description | When filling out a profile initially, a completion percentage is present on the page which dynamically updates as the profile is filled out. Only certain fields count towards this value. |
+| Output               | Completion Percentage                                                                                                                                                                      |
 
-| Process No.          | 12                                                                                                                                                                                                                      |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Title                | Sets a Users Profile Photo                                                                                                                                                                                              |
-| Brief Description    | Adds a new profile photo to the users profile                                                                                                                                                                           |
-| Inputs               | Profile Image                                                                                                                                                                                                           |
-| Detailed Description | The user can add a profile picture at account creation and this will appear when other users view their profile. It can be changed after account creation by uploading a new image. It is associated with their user_id |
-| Output               | None                                                                                                                                                                                                                    |
 
-### get ProfilePhoto
+| Process No.          | 7                                                                                                                                                                                           |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | requiredCheck                                                                                                                                                                               |
+| Brief Description    | Checks if the required values are filled out during profile setup.                                                                                                                          |
+| Inputs               | Name, Age, Location, Bio, Profile Photo, Gender                                                                                                                                             |
+| Detailed Description | If these required values are not filled out, the user is not allowed to save their profile. If they are, then the information they provided will be saved to their profile using process 8. |
+| Output               | Sends the user to the homepage, or denies the use of the "save profile button" if the required values are not provided.                                                                     |
 
-| Process No.          | 13                                                                                                                                                                                                            |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Title                | Returns a Users Profile Photo                                                                                                                                                                                 |
-| Brief Description    | Returns a users profile photo when their profile is being viewed                                                                                                                                              |
-| Inputs               | User_id                                                                                                                                                                                                       |
-| Detailed Description | When a user is viewing another users profile, their profile picture is returned to be displayed. This also occurs when a user looks at their own profile. The profile photo is associated with their user_id. |
-| Output               | Profile Photo                                                                                                                                                                                                 |
 
-### setAdditionalPhotos
-### getAdditionalPhotos
+| Process No.          | 8                                 |
+|----------------------|-----------------------------------|
+| Title                | saveProfile                       |
+| Brief Description    | Saves a users profile information |
+| Inputs               |                                   |
+| Detailed Description |                                   |
+| Output               |                                   |
 
-### setBio
-### getBio
 
-### setName
-### getName
+| Process No.          | 9          |
+|----------------------|------------|
+| Title                | getProfile |
+| Brief Description    |            |
+| Inputs               |            |
+| Detailed Description |            |
+| Output               |            |
 
-### setAge
-### getAge
 
-### setGender
-### getGender
+| Process No.          | 10          |
+|----------------------|-------------|
+| Title                | changeEmail |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
 
-### setLocation
-### getLocation
 
-### calculateReputation
-### getReputation
+| Process No.          | 11             |
+|----------------------|----------------|
+| Title                | changePassword |
+| Brief Description    |                |
+| Inputs               |                |
+| Detailed Description |                |
+| Output               |                |
 
-### setType
-### getType
 
-### setInterests
-### getInterests
+| Process No.          | 12              |
+|----------------------|-----------------|
+| Title                | setProfilePhoto |
+| Brief Description    |                 |
+| Inputs               |                 |
+| Detailed Description |                 |
+| Output               |                 |
 
-### newMatch
-### removeMatch
-### setMatchesRemaining
-### getMatchesRemaining
 
-### sendMessage
-### getMessages
-### setRead
+| Process No.          | 13              |
+|----------------------|-----------------|
+| Title                | getProfilePhoto |
+| Brief Description    |                 |
+| Inputs               |                 |
+| Detailed Description |                 |
+| Output               |                 |
 
-### sendLike
-### getLikes
+| Process No.          | 14                  |
+|----------------------|---------------------|
+| Title                | setAdditionalPhotos |
+| Brief Description    |                     |
+| Inputs               |                     |
+| Detailed Description |                     |
+| Output               |                     |
 
-### blockUser
-### unblockUser
 
-### setStatus
-### getStatus
+| Process No.          | 15                  |
+|----------------------|---------------------|
+| Title                | getAdditionalPhotos |
+| Brief Description    |                     |
+| Inputs               |                     |
+| Detailed Description |                     |
+| Output               |                     |
 
-### sendReport
-### getReportStatus
-### resolveReport
 
-### banUser
-### unbanUser
+| Process No.          | 16     |
+|----------------------|--------|
+| Title                | setBio |
+| Brief Description    |        |
+| Inputs               |        |
+| Detailed Description |        |
+| Output               |        |
+
+
+| Process No.          | 17     |
+|----------------------|--------|
+| Title                | getBio |
+| Brief Description    |        |
+| Inputs               |        |
+| Detailed Description |        |
+| Output               |        |
+
+
+| Process No.          | 18      |
+|----------------------|---------|
+| Title                | setName |
+| Brief Description    |         |
+| Inputs               |         |
+| Detailed Description |         |
+| Output               |         |
+
+
+| Process No.          | 19      |
+|----------------------|---------|
+| Title                | getName |
+| Brief Description    |         |
+| Inputs               |         |
+| Detailed Description |         |
+| Output               |         |
+
+
+| Process No.          | 20     |
+|----------------------|--------|
+| Title                | setAge |
+| Brief Description    |        |
+| Inputs               |        |
+| Detailed Description |        |
+| Output               |        |
+
+
+| Process No.          | 21     |
+|----------------------|--------|
+| Title                | getAge |
+| Brief Description    |        |
+| Inputs               |        |
+| Detailed Description |        |
+| Output               |        |
+
+
+| Process No.          | 22        |
+|----------------------|-----------|
+| Title                | setGender |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
+
+
+| Process No.          | 23        |
+|----------------------|-----------|
+| Title                | getGender |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
+
+
+| Process No.          | 24          |
+|----------------------|-------------|
+| Title                | setLocation |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
+ 
+
+| Process No.          | 25          |
+|----------------------|-------------|
+| Title                | getLocation |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
+
+
+| Process No.          | 26                  |
+|----------------------|---------------------|
+| Title                | calculateReputation |
+| Brief Description    |                     |
+| Inputs               |                     |
+| Detailed Description |                     |
+| Output               |                     |
+
+
+| Process No.          | 27            |
+|----------------------|---------------|
+| Title                | getReputation |
+| Brief Description    |               |
+| Inputs               |               |
+| Detailed Description |               |
+| Output               |               |
+
+
+
+| Process No.          | 28      |
+|----------------------|---------|
+| Title                | setType |
+| Brief Description    |         |
+| Inputs               |         |
+| Detailed Description |         |
+| Output               |         |
+
+
+| Process No.          | 29      |
+|----------------------|---------|
+| Title                | getType |
+| Brief Description    |         |
+| Inputs               |         |
+| Detailed Description |         |
+| Output               |         |
+
+
+| Process No.          | 30           |
+|----------------------|--------------|
+| Title                | setInterests |
+| Brief Description    |              |
+| Inputs               |              |
+| Detailed Description |              |
+| Output               |              |
+
+
+| Process No.          | 31           |
+|----------------------|--------------|
+| Title                | getInterests |
+| Brief Description    |              |
+| Inputs               |              |
+| Detailed Description |              |
+| Output               |              |
+
+
+
+| Process No.          | 32       |
+|----------------------|----------|
+| Title                | newMatch |
+| Brief Description    |          |
+| Inputs               |          |
+| Detailed Description |          |
+| Output               |          |
+
+
+| Process No.          | 33          |
+|----------------------|-------------|
+| Title                | removeMatch |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
+
+
+| Process No.          | 34                  |
+|----------------------|---------------------|
+| Title                | setMatchesRemaining |
+| Brief Description    |                     |
+| Inputs               |                     |
+| Detailed Description |                     |
+| Output               |                     |
+ 
+
+| Process No.          | 35                  |
+|----------------------|---------------------|
+| Title                | getMatchesRemaining |
+| Brief Description    |                     |
+| Inputs               |                     |
+| Detailed Description |                     |
+| Output               |                     |
+ 
+
+| Process No.          | 36          |
+|----------------------|-------------|
+| Title                | sendMessage |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
+
+
+| Process No.          | 37          |
+|----------------------|-------------|
+| Title                | getMessages |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
+
+
+| Process No.          | 38      |
+|----------------------|---------|
+| Title                | setRead |
+| Brief Description    |         |
+| Inputs               |         |
+| Detailed Description |         |
+| Output               |         |
+ 
+
+| Process No.          | 39       |
+|----------------------|----------|
+| Title                | sendLike |
+| Brief Description    |          |
+| Inputs               |          |
+| Detailed Description |          |
+| Output               |          |
+ 
+
+| Process No.          | 40       |
+|----------------------|----------|
+| Title                | getLikes |
+| Brief Description    |          |
+| Inputs               |          |
+| Detailed Description |          |
+| Output               |          |
+ 
+
+| Process No.          | 41        |
+|----------------------|-----------|
+| Title                | blockUser |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
+
+
+| Process No.          | 42          |
+|----------------------|-------------|
+| Title                | unblockUser |
+| Brief Description    |             |
+| Inputs               |             |
+| Detailed Description |             |
+| Output               |             |
+ 
+
+| Process No.          | 43        |
+|----------------------|-----------|
+| Title                | setStatus |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
+ 
+
+| Process No.          | 44        |
+|----------------------|-----------|
+| Title                | getStatus |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
+
+
+| Process No.          | 45         |
+|----------------------|------------|
+| Title                | sendReport |
+| Brief Description    |            |
+| Inputs               |            |
+| Detailed Description |            |
+| Output               |            |
+
+
+| Process No.          | 46              |
+|----------------------|-----------------|
+| Title                | getReportStatus |
+| Brief Description    |                 |
+| Inputs               |                 |
+| Detailed Description |                 |
+| Output               |                 | 
+
+
+| Process No.          | 47            |
+|----------------------|---------------|
+| Title                | resolveReport |
+| Brief Description    |               |
+| Inputs               |               |
+| Detailed Description |               |
+| Output               |               |
+ 
+
+| Process No.          | 48      |
+|----------------------|---------|
+| Title                | banUser |
+| Brief Description    |         |
+| Inputs               |         |
+| Detailed Description |         |
+| Output               |         |
+ 
+
+| Process No.          | 49        |
+|----------------------|-----------|
+| Title                | unbanUser |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
 
 
 
