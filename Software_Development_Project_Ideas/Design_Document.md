@@ -108,23 +108,25 @@ Matched users must be able to communicate through an **internal messaging system
 ## Database Tables
 
 ### User set-up Table
-| Field            | Type                                       | KeyType |
-| ---------------- | ------------------------------------------ | ------- |
-| user_id          | INT                                        | PK      |
-| username         | VARCHAR                                    | UNIQUE  |
-| email            | VARCHAR                                    | UNIQUE  |
-| password_hash    | VARCHAR                                    |         |
-| role             | ENUM('user','admin')                       |         |
-| gender           | ENUM('male','female','non_binary','other') |         |
-| date_of_birth    | DATE                                       |         |
-| country          | VARCHAR                                    |         |
-| bio              | TEXT                                       |         |
-| reputation_score | INT                                        |         |
-| is_active        | BOOLEAN                                    |         |
-| is_banned        | BOOLEAN                                    |         |
-| created_at       | TIMESTAMP                                  |         |
-| last_login_at    | TIMESTAMP                                  |         |
-| deleted_at       | TIMESTAMP (nullable)                       |         |
+| Field             | Type                                       | KeyType |
+|-------------------|--------------------------------------------| ------- |
+| user_id           | INT                                        | PK      |
+| username          | VARCHAR                                    | UNIQUE  |
+| email             | VARCHAR                                    | UNIQUE  |
+| password_hash     | VARCHAR                                    |         |
+| role              | ENUM('user','admin')                       |         |
+| gender            | ENUM('male','female','non_binary','other') |         |
+| date_of_birth     | DATE                                       |         |
+| country           | VARCHAR                                    |         |
+| bio               | TEXT                                       |         |
+| reputation_score  | INT                                        |         |
+| is_active         | BOOLEAN                                    |         |
+| is_banned         | BOOLEAN                                    |         |
+| created_at        | TIMESTAMP                                  |         |
+| last_login_at     | TIMESTAMP                                  |         |
+| deleted_at        | TIMESTAMP (nullable)                       |         |
+| profile_completed | BOOLEAN                                    |         |
+
 
 ### Permissible Interests Table
 | Field         | Type    | KeyType |
