@@ -211,7 +211,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 
 ### Entity Relationship Diagram
-![ERD](Photos\ERD.pdf)
+![ERD.png](Photos/ERD.png)
 
 ## Process Chart List
 
