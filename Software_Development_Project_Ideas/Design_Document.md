@@ -156,15 +156,16 @@ Matched users must be able to communicate through an **internal messaging system
 | created_at | TIMESTAMP |                        |
 
 ### Matches Table
-| Field      | Type                                 | KeyType            |
-| ---------- | ------------------------------------ | ------------------ |
-| match_id   | INT                                  | PK                 |
-| user1_id   | INT                                  | FK → users.user_id |
-| user2_id   | INT                                  | FK → users.user_id |
-| status     | ENUM('active','unmatched','blocked') |                    |
-| created_at | TIMESTAMP                            |                    |
-| updated_at | TIMESTAMP                            |                    |
-| deleted_at | TIMESTAMP (nullable)                 |                    |
+| Field                     | Type                                 | KeyType            |
+|---------------------------|--------------------------------------|--------------------|
+| match_id                  | INT                                  | PK                 |
+| user1_id                  | INT                                  | FK → users.user_id |
+| user2_id                  | INT                                  | FK → users.user_id |
+| status                    | ENUM('active','unmatched','blocked') |                    |
+| created_at                | TIMESTAMP                            |                    |
+| match_compatability_score | INT                                  |                    |
+| updated_at                | TIMESTAMP                            |                    |
+| deleted_at                | TIMESTAMP (nullable)                 |                    |
 
 ### Messages Table
 | Field        | Type                 | KeyType               |
