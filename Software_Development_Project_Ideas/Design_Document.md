@@ -189,16 +189,29 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Reports Table
 | Field            | Type                                    | KeyType            |
-| ---------------- | --------------------------------------- | ------------------ |
+|------------------|-----------------------------------------| ------------------ |
 | report_id        | INT                                     | PK                 |
 | reporter_id      | INT                                     | FK → users.user_id |
 | reported_user_id | INT                                     | FK → users.user_id |
 | message_id       | INT (nullable FK → messages.message_id) |                    |
 | reason           | TEXT                                    |                    |
+| report_severity  | ENUM('Low','Medium','High')             |                    |
 | status           | ENUM('open','reviewed','dismissed')     |                    |
 | created_at       | TIMESTAMP                               |                    |
 
 
+### Photos Table
+| Field            | Type                      | KeyType            |
+|------------------|---------------------------|--------------------|
+| photo_id         | INT                       | PK                 |
+| user_id          | INT                       | FK → users.user_id |
+| photo_url        | VARCHAR                   |                    |
+| is_profile_photo | BOOLEAN                   |                    |
+| created_at       | TIMESTAMP                 |                    |
+
+
+### Entity Relationship Diagram
+![ERD](Photos\ERD.pdf)
 
 ## Process Chart List
 
