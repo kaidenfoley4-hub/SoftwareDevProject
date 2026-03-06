@@ -13,8 +13,18 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST["register"])) {
-    $username = $_POST["username"];
-    $email = $_POST["email"];
+    if(isset($_POST["username"])){
+        $username = $_POST["username"];
+    }else{
+        print "No username provided";
+        exit;
+    }
+    if(isset($_POST["email"])){
+        $email = $_POST["email"];
+    }else{
+        print "No email provided";
+        exit;
+    }
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
     $checkEmail = $conn->query("SELECT email FROM users WHERE email='$email'");
@@ -27,6 +37,8 @@ if (isset($_POST["register"])) {
 
     header("Location: login.php");
     exit();
+} else{
+    print "Nothing Entered";
 }
 
 if (isset($_POST["login"])) {
