@@ -243,39 +243,11 @@ Matched users must be able to communicate through an **internal messaging system
 
 ## Process Tables
 
-### sendLike
-
-### getLikes
-
-### getUsers
-
-### setStatus
-
-### setFavourite
-
-### getFavourite
-
-### sendMessage
-
-### getMessages
-
-### changeEmail
-
-### changePassword
-
-### getAccount
-
-### getProfile
-
-### modifyProfile
-
-### setVisible
-
-### getImage
+### registrationValidation
 
 ### createAccount
 
-| Process No.          | 16                                                                                           |
+| Process No.          | 2                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------|
 | Title                | Create a New User Account                                                                    |
 | Brief Description    | Adds a new user to the User Set-up table                                                     |
@@ -283,9 +255,25 @@ Matched users must be able to communicate through an **internal messaging system
 | Detailed Description | Adds a new user to the database, assigning them a unique user_id and hashing their password. |
 | Output               | User gets redirected to the profile page.                                                    |
 
+### getAccount
+
+### loginValidation
+
+### firstLogin
+
+### setCompleteness
+
+### requiredCheck
+
+### saveProfile
+### getProfile
+
+### changeEmail
+### changePassword
+
 ### setProfilePhoto
 
-| Process No.          | 17                                                                                                                                                                                                                      |
+| Process No.          | 12                                                                                                                                                                                                                      |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Title                | Sets a Users Profile Photo                                                                                                                                                                                              |
 | Brief Description    | Adds a new profile photo to the users profile                                                                                                                                                                           |
@@ -295,7 +283,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### get ProfilePhoto
 
-| Process No.          | 18                                                                                                                                                                                                            |
+| Process No.          | 13                                                                                                                                                                                                            |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Title                | Returns a Users Profile Photo                                                                                                                                                                                 |
 | Brief Description    | Returns a users profile photo when their profile is being viewed                                                                                                                                              |
@@ -329,4 +317,31 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### setInterests
 ### getInterests
+
+### newMatch
+### removeMatch
+### setMatchesRemaining
+### getMatchesRemaining
+
+### sendMessage
+### getMessages
+### setRead
+
+### sendLike
+### getLikes
+
+### blockUser
+### unblockUser
+
+### setStatus
+### getStatus
+
+### sendReport
+### getReportStatus
+### resolveReport
+
+### banUser
+### unbanUser
+
+
 
