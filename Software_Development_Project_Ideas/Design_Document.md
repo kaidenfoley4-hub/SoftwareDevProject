@@ -589,31 +589,31 @@ It's necessary in our database to link each image to the right person and explic
 | Output               | INT                                                                                            ||
  
 
-| Process No.          | 33          |
-|----------------------|-------------|
-| Title                | sendMessage |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 33                                                                                                                       |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Title                | sendMessage                                                                                                              |
+| Brief Description    | Sends a message to another user                                                                                          |
+| Inputs               | match_id, sender_id, message_text                                                                                        |
+| Detailed Description | Creates a new message in the messages table, using the senders id and the match id to identify the sender and recipient. |
+| Output               | created_at TIMESTAMP, for the message                                                                                    |
 
 
-| Process No.          | 34          |
-|----------------------|-------------|
-| Title                | getMessages |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 34                                                                                              |
+|----------------------|-------------------------------------------------------------------------------------------------|
+| Title                | getMessages                                                                                     |
+| Brief Description    | Gets a users messages                                                                           |
+| Inputs               | match_id                                                                                        |
+| Detailed Description | Returns the message history between two users by querying their match id in the messages table. |
+| Output               | message_text for each message found                                                             |
 
 
-| Process No.          | 35      |
-|----------------------|---------|
-| Title                | setRead |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 35                                                                                                           |
+|----------------------|--------------------------------------------------------------------------------------------------------------|
+| Title                | setRead                                                                                                      |
+| Brief Description    | Sets a messages status to read                                                                               |
+| Inputs               | message_id                                                                                                   |
+| Detailed Description | Once a message is read by the recipient, its is_read value is updated to be TRUE and this value is returned. |
+| Output               | Boolean TRUE, to let the user know the message has been read                                                 |
  
 
 | Process No.          | 36       |
