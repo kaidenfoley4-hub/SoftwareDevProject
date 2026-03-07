@@ -301,114 +301,114 @@ Matched users must be able to communicate through an **internal messaging system
 | Brief Description    | Checks if the required values are filled out during profile setup.                                                                                                                          |
 | Inputs               | Name, Age, Location, Bio, Profile Photo, Gender                                                                                                                                             |
 | Detailed Description | If these required values are not filled out, the user is not allowed to save their profile. If they are, then the information they provided will be saved to their profile using process 8. |
-| Output               | Sends the user to the homepage, or denies the use of the "save profile button" if the required values are not provided.                                                                     |
+| Output               | Boolean True or False, to allow the user to save the profile onto the database                                                                                                              |
 
 
-| Process No.          | 8                                 |
-|----------------------|-----------------------------------|
-| Title                | saveProfile                       |
-| Brief Description    | Saves a users profile information |
-| Inputs               |                                   |
-| Detailed Description |                                   |
-| Output               |                                   |
+| Process No.          | 8                                                                              |
+|----------------------|--------------------------------------------------------------------------------|
+| Title                | saveProfile                                                                    |
+| Brief Description    | Saves a users profile information                                              |
+| Inputs               | Profile Photo, Bio, Name, Age, Gender, Location, Type, Interests               |
+| Detailed Description | This takes all the inputs and saves them to the database                       |
+| Output               | Sends the user to their profile webpage and saves their values to the database |
 
 
-| Process No.          | 9          |
-|----------------------|------------|
-| Title                | getProfile |
-| Brief Description    |            |
-| Inputs               |            |
-| Detailed Description |            |
-| Output               |            |
+| Process No.          | 9                                                                      |
+|----------------------|------------------------------------------------------------------------|
+| Title                | getProfile                                                             |
+| Brief Description    | Return a representation of the selected users profile                  |
+| Inputs               | None                                                                   |
+| Detailed Description | This function will return a text version of the selected users profile |
+| Output               | A String with all the information about the selected users profile     |
 
 
-| Process No.          | 10          |
-|----------------------|-------------|
-| Title                | changeEmail |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 10                                                                    |
+|----------------------|-----------------------------------------------------------------------|
+| Title                | changeEmail                                                           |
+| Brief Description    | Allows a user to change email                                         |
+| Inputs               | Oldemail, Newemail & password                                         |
+| Detailed Description | This will replace the saved email for the current user                |
+| Output               | Boolean True or False, To tell the user the action has been completed |
 
 
-| Process No.          | 11             |
-|----------------------|----------------|
-| Title                | changePassword |
-| Brief Description    |                |
-| Inputs               |                |
-| Detailed Description |                |
-| Output               |                |
+| Process No.          | 11                                                        |
+|----------------------|-----------------------------------------------------------|
+| Title                | changePassword                                            |
+| Brief Description    | Allows a user to change password                          |
+| Inputs               | Email, Oldpassword & Newpassword                          |
+| Detailed Description | This will replace the saved password for the current user |
+| Output               | Boolean, To tell the user the action has been completed   |
 
 
-| Process No.          | 12              |
-|----------------------|-----------------|
-| Title                | setProfilePhoto |
-| Brief Description    |                 |
-| Inputs               |                 |
-| Detailed Description |                 |
-| Output               |                 |
+| Process No.          | 12                                                                |
+|----------------------|-------------------------------------------------------------------|
+| Title                | setProfilePhoto                                                   |
+| Brief Description    | Allows a user to set their profile photo                          |
+| Inputs               | Any image format HTML accepts                                     |
+| Detailed Description | Let's a user provide images which will be used with their profile |
+| Output               | Boolean, To tell the user the action has been completed           |
 
 
-| Process No.          | 13              |
-|----------------------|-----------------|
-| Title                | getProfilePhoto |
-| Brief Description    |                 |
-| Inputs               |                 |
-| Detailed Description |                 |
-| Output               |                 |
+| Process No.          | 13                                                     |
+|----------------------|--------------------------------------------------------|
+| Title                | getProfilePhoto                                        |
+| Brief Description    | Allows a user to check the set profile photo           |
+| Inputs               | None                                                   |
+| Detailed Description | Let's a user get the photos set to their profile photo |
+| Output               | Zip file with the image                                |
 
-| Process No.          | 14                  |
-|----------------------|---------------------|
-| Title                | setAdditionalPhotos |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
-
-
-| Process No.          | 15                  |
-|----------------------|---------------------|
-| Title                | getAdditionalPhotos |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
+| Process No.          | 14                                                                                 |
+|----------------------|------------------------------------------------------------------------------------|
+| Title                | setAdditionalPhotos                                                                |
+| Brief Description    | Allows a user to set their additional photos                                       |
+| Inputs               | Any image format HTML accepts                                                      |
+| Detailed Description | Let's a user provide images which will be used with their additonal photos section |
+| Output               | Boolean, To tell the user the action has been completed                            |
 
 
-| Process No.          | 16     |
-|----------------------|--------|
-| Title                | setBio |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 15                                                         |
+|----------------------|------------------------------------------------------------|
+| Title                | getAdditionalPhotos                                        |
+| Brief Description    | Allows a user to check the set additional photos           |
+| Inputs               | None                                                       |
+| Detailed Description | Let's a user get the photos set to their additional photos |
+| Output               | Zip file with the images                                   |
 
 
-| Process No.          | 17     |
-|----------------------|--------|
-| Title                | getBio |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 16                                                                   |
+|----------------------|----------------------------------------------------------------------|
+| Title                | setBio                                                               |
+| Brief Description    | Let's a user set their profile bio                                   |
+| Inputs               | String                                                               |
+| Detailed Description | A user will fill in a text field which will be saved to the database |
+| Output               | Boolean, To tell the user the action has been completed              |
 
 
-| Process No.          | 18      |
-|----------------------|---------|
-| Title                | setName |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 17                                                                          |
+|----------------------|-----------------------------------------------------------------------------|
+| Title                | getBio                                                                      |
+| Brief Description    | Returns the Bio for the selected users profile                              |
+| Inputs               | None                                                                        |
+| Detailed Description | Returns the String that has been saved into the database for the users' Bio |
+| Output               | String, of the attached Bio                                                 |
 
 
-| Process No.          | 19      |
-|----------------------|---------|
-| Title                | getName |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 18                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setName                                                 |
+| Brief Description    | Let's a user set their name                             |
+| Inputs               | String                                                  |
+| Detailed Description | Saves the users chosen name to the database             |
+| Output               | Boolean, To tell the user the action has been completed |
+
+
+| Process No.          | 19                                                                           |
+|----------------------|------------------------------------------------------------------------------|
+| Title                | getName                                                                      |
+| Brief Description    | Returns the Name for the selected user                                       |
+| Inputs               | None                                                                         |
+| Detailed Description | Returns the String that has been saved into the database for the users' Name |
+| Output               | String                                                                       |
 
 
 | Process No.          | 20     |
