@@ -2,7 +2,13 @@
 
 ## William
 ### Work Completed Week 6 - 
+Mainly worked on compiling a comprehensive list of processes for the design document, and then creating tables for a majority of them.
+
 ### To-Do Week 7 - 
+Setup the login screen sending users to the userprofile page if their profile is not complete.
+Get the userprofile page to work with saving user data to the database.
+Remove the stars on the userprofile page when the fields are filled.
+Look into getting the other pages using bootstrap and any future pages should use it going forward.
 
 ## Enda
 ### Work Completed Week 6 -
