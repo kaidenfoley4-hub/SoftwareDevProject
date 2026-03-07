@@ -652,80 +652,80 @@ It's necessary in our database to link each image to the right person and explic
 | Output               | Boolean response to inform user that they have successfully unblocked the other. |
  
 
-| Process No.          | 40        |
-|----------------------|-----------|
-| Title                | setActive |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 40                                                                                                                   |
+|----------------------|----------------------------------------------------------------------------------------------------------------------|
+| Title                | setActive                                                                                                            |
+| Brief Description    | Toggles a users account status                                                                                       |
+| Inputs               | user_id                                                                                                              |
+| Detailed Description | Toggles a users account between active & deactivated by modifying the is_active field associated with their user_id. |
+| Output               | None                                                                                                                 |
  
 
-| Process No.          | 41        |
-|----------------------|-----------|
-| Title                | getActive |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 41                                                                    |
+|----------------------|-----------------------------------------------------------------------|
+| Title                | getActive                                                             |
+| Brief Description    | Gets a users account status                                           |
+| Inputs               | user_id                                                               |
+| Detailed Description | Returns the current status of a users account through a boolean value |
+| Output               | Boolean to represent if account is active                             |
 
 
-| Process No.          | 42         |
-|----------------------|------------|
-| Title                | sendReport |
-| Brief Description    |            |
-| Inputs               |            |
-| Detailed Description |            |
-| Output               |            |
+| Process No.          | 42                                                                                                             |
+|----------------------|----------------------------------------------------------------------------------------------------------------|
+| Title                | sendReport                                                                                                     |
+| Brief Description    | Creates a report against another user                                                                          |
+| Inputs               | reporter_id, reported_user_id, reason, report_severity                                                         |
+| Detailed Description | Creates a new report in the reports table and maps it to the reporting and reported users using their user_id. |
+| Output               | Boolean to inform the user the report was successfully created.                                                |
 
 
-| Process No.          | 43              |
-|----------------------|-----------------|
-| Title                | getReportStatus |
-| Brief Description    |                 |
-| Inputs               |                 |
-| Detailed Description |                 |
-| Output               |                 | 
+| Process No.          | 43                                                                                    |
+|----------------------|---------------------------------------------------------------------------------------|
+| Title                | getReportStatus                                                                       |
+| Brief Description    | Gets a reports status                                                                 |
+| Inputs               | report_id                                                                             |
+| Detailed Description | Returns the status of a report from the reports table by searching for the report_id. |
+| Output               | ENUM for status                                                                       | 
 
 
-| Process No.          | 44            |
-|----------------------|---------------|
-| Title                | resolveReport |
-| Brief Description    |               |
-| Inputs               |               |
-| Detailed Description |               |
-| Output               |               |
+| Process No.          | 44                                                                                                        |
+|----------------------|-----------------------------------------------------------------------------------------------------------|
+| Title                | resolveReport                                                                                             |
+| Brief Description    | Allows an admin to resolve a report.                                                                      |
+| Inputs               | report_id                                                                                                 |
+| Detailed Description | An admin can review a report and set its status to reviewed or dismissed using buttons on the admin page. |
+| Output               | None                                                                                                      |
  
 
-| Process No.          | 45      |
-|----------------------|---------|
-| Title                | banUser |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 45                                                                                                    |
+|----------------------|-------------------------------------------------------------------------------------------------------|
+| Title                | banUser                                                                                               |
+| Brief Description    | Allows an admin to ban a user.                                                                        |
+| Inputs               | user_id                                                                                               |
+| Detailed Description | An admin can enter a users id to ban them from the website, which sets their is_banned value to true. |
+| Output               | Boolean is_banned, to represent the account is now banned.                                            |
  
 
-| Process No.          | 46        |
-|----------------------|-----------|
-| Title                | unbanUser |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 46                                                                                                       |
+|----------------------|----------------------------------------------------------------------------------------------------------|
+| Title                | unbanUser                                                                                                |
+| Brief Description    | Allows an admin to unban a user.                                                                         |
+| Inputs               | user_id                                                                                                  |
+| Detailed Description | An admin can enter a users id to unban them from the website, which sets their is_banned value to false. |
+| Output               | Boolean is_banned, to represent the account has been unbanned.                                           |
 
-| Process No.          | 47        |
-|----------------------|-----------|
-| Title                | setGender |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 47                                                                                                 |
+|----------------------|----------------------------------------------------------------------------------------------------|
+| Title                | setGender                                                                                          |
+| Brief Description    | Sets a users gender                                                                                |
+| Inputs               | user_id, gender                                                                                    |
+| Detailed Description | Sets the gender for a users account in the user set-up table to be whatever gender the user chose. |
+| Output               | Boolean to inform the user the action was successful.                                              |
 
-| Process No.          | 48        |
-|----------------------|-----------|
-| Title                | getGender |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 48                                                                               |
+|----------------------|----------------------------------------------------------------------------------|
+| Title                | getGender                                                                        |
+| Brief Description    | Returns a users gender                                                           |
+| Inputs               | user_id                                                                          |
+| Detailed Description | Returns a users gender from the user set-up table by searching for their user_id |
+| Output               | ENUM for gender                                                                  |
