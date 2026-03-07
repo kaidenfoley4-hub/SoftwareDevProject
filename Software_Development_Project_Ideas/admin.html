@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="standard.css">
 </head>
 
 <body>
+
 
 <!-- LEFT SIDEBAR -->
 <div class="sidebar sidebar-left">
@@ -24,97 +27,182 @@
 </div>
 
 
-<!-- MAIN ADMIN PANEL -->
-<div class="main-section">
 
-    <h1 class="site-title">Admin Dashboard</h1>
+<!-- MAIN SECTION -->
+<div class="card profile-card">
 
-    <div class="card profile-card">
+    <h2 class="panel-title">Reported Users</h2>
 
-        <div style="width:100%;">
+    <div class="reported-users-list">
 
-            <h2 class="panel-title">User Management</h2>
+        <div class="list-item reported-user" onclick="selectUser('reported_user')">
+            <strong>Username:</strong> reported_user<br>
+            Reports: 3
+        </div>
 
-            <div class="list-item">
-                <strong>Username:</strong> example_user
-                <br>
-                <button class="button">View Profile</button>
-                <button class="button">Edit Profile</button>
-                <button class="button">Ban User</button>
-            </div>
+        <div class="list-item reported-user" onclick="selectUser('spam_account')">
+            <strong>Username:</strong> spam_account<br>
+            Reports: 5
+        </div>
 
-            <div class="list-item">
-                <strong>Username:</strong> another_user
-                <br>
-                <button class="button">View Profile</button>
-                <button class="button">Edit Profile</button>
-                <button class="button">Ban User</button>
-            </div>
-
+        <div class="list-item reported-user" onclick="selectUser('toxic_user')">
+            <strong>Username:</strong> toxic_user<br>
+            Reports: 2
         </div>
 
     </div>
 
 </div>
+
 
 
 <!-- RIGHT SIDEBAR -->
 <div class="sidebar sidebar-right">
 
-    <div class="matches-panel">
 
-        <div class="heart"></div>
-        <div class="heart-number">!</div>
+    <!-- REPORTS PANEL -->
+    <div class="panel">
 
-    </div>
+        <h3 class="panel-title">Reports</h3>
 
-    <div class="split-panel">
-
-        <!-- REPORTS -->
-        <div class="panel">
-
-            <h3 class="panel-title">Reports</h3>
-
-            <div class="list-item">
-                <strong>User:</strong> reported_user <br>
-                Reason: Harassment <br>
-                <button class="button">Review</button>
-                <button class="button">Dismiss</button>
-            </div>
-
-            <div class="list-item">
-                <strong>User:</strong> spam_account <br>
-                Reason: Spam <br>
-                <button class="button">Review</button>
-                <button class="button">Dismiss</button>
-            </div>
-
-        </div>
-
-        <!-- CONTENT MODERATION -->
-        <div class="panel">
-
-            <h3 class="panel-title">Content Moderation</h3>
-
-            <div class="list-item">
-                <strong>Message Flagged</strong>
-                <br>
-                "inappropriate message text..."
-                <br>
-                <button class="button">Delete Message</button>
-            </div>
-
-            <div class="list-item">
-                <strong>Profile Photo Flagged</strong>
-                <br>
-                <button class="button">Remove Photo</button>
-            </div>
-
+        <div id="reports-container">
+            Select a reported user to view reports.
         </div>
 
     </div>
+
+
+
+    <!-- CONTENT MODERATION -->
+    <div class="panel">
+
+        <h3 class="panel-title">Content Moderation</h3>
+
+        <div id="content-container">
+            Select a reported user to view flagged content.
+        </div>
+
+    </div>
+
 
 </div>
+
+
+
+<script>
+
+    const mockData = {
+
+        reported_user:{
+
+            reports:[
+                {reporter:"alice",reason:"Harassment",time:"2026-03-06 18:30"},
+                {reporter:"ben",reason:"Offensive language",time:"2026-03-06 19:10"},
+                {reporter:"kate",reason:"Spam messages",time:"2026-03-06 20:02"}
+            ],
+
+            messages:[
+                {id:1033,sender:"reported_user",message:"You are annoying",time:"2026-03-06 18:28"},
+                {id:1040,sender:"reported_user",message:"Stop messaging me",time:"2026-03-06 18:55"}
+            ]
+
+        },
+
+        spam_account:{
+
+            reports:[
+                {reporter:"dave",reason:"Spam",time:"2026-03-05 12:30"},
+                {reporter:"lucy",reason:"Advertising",time:"2026-03-05 13:10"}
+            ],
+
+            messages:[
+                {id:2001,sender:"spam_account",message:"Check out this crypto site!",time:"2026-03-05 12:00"}
+            ]
+
+        },
+
+        toxic_user:{
+
+            reports:[
+                {reporter:"sarah",reason:"Abusive messages",time:"2026-03-04 11:20"}
+            ],
+
+            messages:[
+                {id:3002,sender:"toxic_user",message:"You're terrible at this",time:"2026-03-04 11:18"}
+            ]
+
+        }
+
+    };
+
+
+
+    function selectUser(username){
+
+        document.querySelectorAll(".reported-user").forEach(el=>{
+            el.classList.remove("active")
+        })
+
+        event.currentTarget.classList.add("active")
+
+        populateReports(username)
+        populateContent(username)
+
+    }
+
+
+
+    function populateReports(user){
+
+        let reports = mockData[user].reports
+
+        let html=""
+
+        reports.forEach(r=>{
+
+            html += `
+<div class="list-item">
+<strong>Reporter:</strong> ${r.reporter}<br>
+Reason: ${r.reason}<br>
+Time: ${r.time}<br>
+<button class="button">Review</button>
+<button class="button">Dismiss</button>
+</div>
+`
+
+        })
+
+        document.getElementById("reports-container").innerHTML = html
+
+    }
+
+
+
+    function populateContent(user){
+
+        let messages = mockData[user].messages
+
+        let html=""
+
+        messages.forEach(m=>{
+
+            html += `
+<div class="list-item">
+<strong>Message ID:</strong> ${m.id}<br>
+<strong>Sender:</strong> ${m.sender}<br>
+"${m.message}"<br>
+Time: ${m.time}<br>
+<button class="button">Delete Message</button>
+</div>
+`
+
+        })
+
+        document.getElementById("content-container").innerHTML = html
+
+    }
+
+</script>
 
 </body>
 </html>

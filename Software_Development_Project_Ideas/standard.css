@@ -145,10 +145,6 @@ body {
     overflow-y: auto;
 }
 
-.panel:first-child {
-    border-right: 2px solid #e5c7cc;
-}
-
 .list-item {
     padding: 10px;
     border: 2px solid #e5c7cc;
@@ -453,4 +449,38 @@ body {
 .guidelines-placeholder ul li {
     flex: 1;
     padding:5px;
+}
+
+.reported-users-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    width:100%;
+    margin-top:20px;
+}
+
+.reported-user{
+    cursor:pointer;
+    width:100%;
+}
+
+.reported-user:hover{
+    background:#f4f4f4;
+}
+
+.reported-user.active{
+    border:2px solid #ff4d6d;
+}
+
+.sidebar-right{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+}
+
+.profile-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
 }
