@@ -411,61 +411,42 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               | String                                                                       |
 
 
-| Process No.          | 20     |
-|----------------------|--------|
-| Title                | setAge |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 20                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setAge                                                  |
+| Brief Description    | Let's a user set their Age                              |
+| Inputs               | Int                                                     |
+| Detailed Description | Saves a users' chosen Age to the database               |
+| Output               | Boolean, To tell the user the action has been completed |
 
 
-| Process No.          | 21     |
-|----------------------|--------|
-| Title                | getAge |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 21                                                                  |
+|----------------------|---------------------------------------------------------------------|
+| Title                | getAge                                                              |
+| Brief Description    | Returns a users' Age                                                |
+| Inputs               | None                                                                |
+| Detailed Description | Returns the Int saved into the database for the selected users' age |
+| Output               | Int, Of the users' Age                                              |
 
-
-| Process No.          | 22        |
-|----------------------|-----------|
-| Title                | setGender |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
-
-
-| Process No.          | 23        |
-|----------------------|-----------|
-| Title                | getGender |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
-
-
-| Process No.          | 24          |
-|----------------------|-------------|
-| Title                | setLocation |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 22                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setLocation                                             |
+| Brief Description    | Let's a user set their Location                         |
+| Inputs               | String                                                  |
+| Detailed Description | Saves a users' chosen Location to the database          |
+| Output               | Boolean, To tell the user the action has been completed |
  
 
-| Process No.          | 25          |
-|----------------------|-------------|
-| Title                | getLocation |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 23                                                                     |
+|----------------------|------------------------------------------------------------------------|
+| Title                | getLocation                                                            |
+| Brief Description    | Returns a users' Location                                              |
+| Inputs               | None                                                                   |
+| Detailed Description | Returns the String saved into the database for the selected users' age |
+| Output               | String, Of the users' Location                                         |
 
 
-| Process No.          | 26                  |
+| Process No.          | 24                  |
 |----------------------|---------------------|
 | Title                | calculateReputation |
 | Brief Description    |                     |
@@ -474,7 +455,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |                     |
 
 
-| Process No.          | 27            |
+| Process No.          | 25            |
 |----------------------|---------------|
 | Title                | getReputation |
 | Brief Description    |               |
@@ -484,7 +465,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 
 
-| Process No.          | 28      |
+| Process No.          | 26      |
 |----------------------|---------|
 | Title                | setType |
 | Brief Description    |         |
@@ -493,7 +474,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |         |
 
 
-| Process No.          | 29      |
+| Process No.          | 27      |
 |----------------------|---------|
 | Title                | getType |
 | Brief Description    |         |
@@ -502,7 +483,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |         |
 
 
-| Process No.          | 30           |
+| Process No.          | 28           |
 |----------------------|--------------|
 | Title                | setInterests |
 | Brief Description    |              |
@@ -511,7 +492,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |              |
 
 
-| Process No.          | 31           |
+| Process No.          | 29           |
 |----------------------|--------------|
 | Title                | getInterests |
 | Brief Description    |              |
@@ -521,7 +502,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 
 
-| Process No.          | 32       |
+| Process No.          | 30       |
 |----------------------|----------|
 | Title                | newMatch |
 | Brief Description    |          |
@@ -530,7 +511,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |          |
 
 
-| Process No.          | 33          |
+| Process No.          | 31          |
 |----------------------|-------------|
 | Title                | removeMatch |
 | Brief Description    |             |
@@ -539,7 +520,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |             |
 
 
-| Process No.          | 34                  |
+| Process No.          | 32                  |
 |----------------------|---------------------|
 | Title                | setMatchesRemaining |
 | Brief Description    |                     |
@@ -548,7 +529,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |                     |
  
 
-| Process No.          | 35                  |
+| Process No.          | 33                  |
 |----------------------|---------------------|
 | Title                | getMatchesRemaining |
 | Brief Description    |                     |
@@ -557,7 +538,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |                     |
  
 
-| Process No.          | 36          |
+| Process No.          | 34          |
 |----------------------|-------------|
 | Title                | sendMessage |
 | Brief Description    |             |
@@ -566,7 +547,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |             |
 
 
-| Process No.          | 37          |
+| Process No.          | 35          |
 |----------------------|-------------|
 | Title                | getMessages |
 | Brief Description    |             |
@@ -575,7 +556,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |             |
 
 
-| Process No.          | 38      |
+| Process No.          | 36      |
 |----------------------|---------|
 | Title                | setRead |
 | Brief Description    |         |
@@ -584,7 +565,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |         |
  
 
-| Process No.          | 39       |
+| Process No.          | 37       |
 |----------------------|----------|
 | Title                | sendLike |
 | Brief Description    |          |
@@ -593,7 +574,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |          |
  
 
-| Process No.          | 40       |
+| Process No.          | 38       |
 |----------------------|----------|
 | Title                | getLikes |
 | Brief Description    |          |
@@ -602,7 +583,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |          |
  
 
-| Process No.          | 41        |
+| Process No.          | 39        |
 |----------------------|-----------|
 | Title                | blockUser |
 | Brief Description    |           |
@@ -611,7 +592,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |           |
 
 
-| Process No.          | 42          |
+| Process No.          | 40          |
 |----------------------|-------------|
 | Title                | unblockUser |
 | Brief Description    |             |
@@ -620,7 +601,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |             |
  
 
-| Process No.          | 43        |
+| Process No.          | 41        |
 |----------------------|-----------|
 | Title                | setStatus |
 | Brief Description    |           |
@@ -629,7 +610,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |           |
  
 
-| Process No.          | 44        |
+| Process No.          | 42        |
 |----------------------|-----------|
 | Title                | getStatus |
 | Brief Description    |           |
@@ -638,7 +619,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |           |
 
 
-| Process No.          | 45         |
+| Process No.          | 43         |
 |----------------------|------------|
 | Title                | sendReport |
 | Brief Description    |            |
@@ -647,7 +628,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |            |
 
 
-| Process No.          | 46              |
+| Process No.          | 44              |
 |----------------------|-----------------|
 | Title                | getReportStatus |
 | Brief Description    |                 |
@@ -656,7 +637,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |                 | 
 
 
-| Process No.          | 47            |
+| Process No.          | 45            |
 |----------------------|---------------|
 | Title                | resolveReport |
 | Brief Description    |               |
@@ -665,7 +646,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |               |
  
 
-| Process No.          | 48      |
+| Process No.          | 46      |
 |----------------------|---------|
 | Title                | banUser |
 | Brief Description    |         |
@@ -674,7 +655,7 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               |         |
  
 
-| Process No.          | 49        |
+| Process No.          | 47        |
 |----------------------|-----------|
 | Title                | unbanUser |
 | Brief Description    |           |
@@ -682,5 +663,18 @@ Matched users must be able to communicate through an **internal messaging system
 | Detailed Description |           |
 | Output               |           |
 
+| Process No.          | 48        |
+|----------------------|-----------|
+| Title                | setGender |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
 
-
+| Process No.          | 49        |
+|----------------------|-----------|
+| Title                | getGender |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
