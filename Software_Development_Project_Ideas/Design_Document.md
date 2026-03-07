@@ -332,171 +332,152 @@ FK - Foreign Key
 | Brief Description    | Checks if the required values are filled out during profile setup.                                                                                                                          |
 | Inputs               | Name, Age, Location, Bio, Profile Photo, Gender                                                                                                                                             |
 | Detailed Description | If these required values are not filled out, the user is not allowed to save their profile. If they are, then the information they provided will be saved to their profile using process 8. |
-| Output               | Sends the user to the homepage, or denies the use of the "save profile button" if the required values are not provided.                                                                     |
+| Output               | Boolean True or False, to allow the user to save the profile onto the database                                                                                                              |
 
 
-| Process No.          | 8                                 |
-|----------------------|-----------------------------------|
-| Title                | saveProfile                       |
-| Brief Description    | Saves a users profile information |
-| Inputs               |                                   |
-| Detailed Description |                                   |
-| Output               |                                   |
+| Process No.          | 8                                                                              |
+|----------------------|--------------------------------------------------------------------------------|
+| Title                | saveProfile                                                                    |
+| Brief Description    | Saves a users profile information                                              |
+| Inputs               | Profile Photo, Bio, Name, Age, Gender, Location, Type, Interests               |
+| Detailed Description | This takes all the inputs and saves them to the database                       |
+| Output               | Sends the user to their profile webpage and saves their values to the database |
 
 
-| Process No.          | 9          |
-|----------------------|------------|
-| Title                | getProfile |
-| Brief Description    |            |
-| Inputs               |            |
-| Detailed Description |            |
-| Output               |            |
+| Process No.          | 9                                                                      |
+|----------------------|------------------------------------------------------------------------|
+| Title                | getProfile                                                             |
+| Brief Description    | Return a representation of the selected users profile                  |
+| Inputs               | None                                                                   |
+| Detailed Description | This function will return a text version of the selected users profile |
+| Output               | A String with all the information about the selected users profile     |
 
 
-| Process No.          | 10          |
-|----------------------|-------------|
-| Title                | changeEmail |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 10                                                                    |
+|----------------------|-----------------------------------------------------------------------|
+| Title                | changeEmail                                                           |
+| Brief Description    | Allows a user to change email                                         |
+| Inputs               | Oldemail, Newemail & password                                         |
+| Detailed Description | This will replace the saved email for the current user                |
+| Output               | Boolean True or False, To tell the user the action has been completed |
 
 
-| Process No.          | 11             |
-|----------------------|----------------|
-| Title                | changePassword |
-| Brief Description    |                |
-| Inputs               |                |
-| Detailed Description |                |
-| Output               |                |
+| Process No.          | 11                                                        |
+|----------------------|-----------------------------------------------------------|
+| Title                | changePassword                                            |
+| Brief Description    | Allows a user to change password                          |
+| Inputs               | Email, Oldpassword & Newpassword                          |
+| Detailed Description | This will replace the saved password for the current user |
+| Output               | Boolean, To tell the user the action has been completed   |
 
 
-| Process No.          | 12              |
-|----------------------|-----------------|
-| Title                | setProfilePhoto |
-| Brief Description    |                 |
-| Inputs               |                 |
-| Detailed Description |                 |
-| Output               |                 |
+| Process No.          | 12                                                                |
+|----------------------|-------------------------------------------------------------------|
+| Title                | setProfilePhoto                                                   |
+| Brief Description    | Allows a user to set their profile photo                          |
+| Inputs               | Any image format HTML accepts                                     |
+| Detailed Description | Let's a user provide images which will be used with their profile |
+| Output               | Boolean, To tell the user the action has been completed           |
 
 
-| Process No.          | 13              |
-|----------------------|-----------------|
-| Title                | getProfilePhoto |
-| Brief Description    |                 |
-| Inputs               |                 |
-| Detailed Description |                 |
-| Output               |                 |
+| Process No.          | 13                                                     |
+|----------------------|--------------------------------------------------------|
+| Title                | getProfilePhoto                                        |
+| Brief Description    | Allows a user to check the set profile photo           |
+| Inputs               | None                                                   |
+| Detailed Description | Let's a user get the photos set to their profile photo |
+| Output               | Zip file with the image                                |
 
-| Process No.          | 14                  |
-|----------------------|---------------------|
-| Title                | setAdditionalPhotos |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
-
-
-| Process No.          | 15                  |
-|----------------------|---------------------|
-| Title                | getAdditionalPhotos |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
+| Process No.          | 14                                                                                 |
+|----------------------|------------------------------------------------------------------------------------|
+| Title                | setAdditionalPhotos                                                                |
+| Brief Description    | Allows a user to set their additional photos                                       |
+| Inputs               | Any image format HTML accepts                                                      |
+| Detailed Description | Let's a user provide images which will be used with their additonal photos section |
+| Output               | Boolean, To tell the user the action has been completed                            |
 
 
-| Process No.          | 16     |
-|----------------------|--------|
-| Title                | setBio |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 15                                                         |
+|----------------------|------------------------------------------------------------|
+| Title                | getAdditionalPhotos                                        |
+| Brief Description    | Allows a user to check the set additional photos           |
+| Inputs               | None                                                       |
+| Detailed Description | Let's a user get the photos set to their additional photos |
+| Output               | Zip file with the images                                   |
 
 
-| Process No.          | 17     |
-|----------------------|--------|
-| Title                | getBio |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 16                                                                   |
+|----------------------|----------------------------------------------------------------------|
+| Title                | setBio                                                               |
+| Brief Description    | Let's a user set their profile bio                                   |
+| Inputs               | String                                                               |
+| Detailed Description | A user will fill in a text field which will be saved to the database |
+| Output               | Boolean, To tell the user the action has been completed              |
 
 
-| Process No.          | 18      |
-|----------------------|---------|
-| Title                | setName |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 17                                                                          |
+|----------------------|-----------------------------------------------------------------------------|
+| Title                | getBio                                                                      |
+| Brief Description    | Returns the Bio for the selected users profile                              |
+| Inputs               | None                                                                        |
+| Detailed Description | Returns the String that has been saved into the database for the users' Bio |
+| Output               | String, of the attached Bio                                                 |
 
 
-| Process No.          | 19      |
-|----------------------|---------|
-| Title                | getName |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 18                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setName                                                 |
+| Brief Description    | Let's a user set their name                             |
+| Inputs               | String                                                  |
+| Detailed Description | Saves the users chosen name to the database             |
+| Output               | Boolean, To tell the user the action has been completed |
 
 
-| Process No.          | 20     |
-|----------------------|--------|
-| Title                | setAge |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 19                                                                           |
+|----------------------|------------------------------------------------------------------------------|
+| Title                | getName                                                                      |
+| Brief Description    | Returns the Name for the selected user                                       |
+| Inputs               | None                                                                         |
+| Detailed Description | Returns the String that has been saved into the database for the users' Name |
+| Output               | String                                                                       |
 
 
-| Process No.          | 21     |
-|----------------------|--------|
-| Title                | getAge |
-| Brief Description    |        |
-| Inputs               |        |
-| Detailed Description |        |
-| Output               |        |
+| Process No.          | 20                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setAge                                                  |
+| Brief Description    | Let's a user set their Age                              |
+| Inputs               | Int                                                     |
+| Detailed Description | Saves a users' chosen Age to the database               |
+| Output               | Boolean, To tell the user the action has been completed |
 
 
-| Process No.          | 22        |
-|----------------------|-----------|
-| Title                | setGender |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 21                                                                  |
+|----------------------|---------------------------------------------------------------------|
+| Title                | getAge                                                              |
+| Brief Description    | Returns a users' Age                                                |
+| Inputs               | None                                                                |
+| Detailed Description | Returns the Int saved into the database for the selected users' age |
+| Output               | Int, Of the users' Age                                              |
 
-
-| Process No.          | 23        |
-|----------------------|-----------|
-| Title                | getGender |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
-
-
-| Process No.          | 24          |
-|----------------------|-------------|
-| Title                | setLocation |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 22                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setLocation                                             |
+| Brief Description    | Let's a user set their Location                         |
+| Inputs               | String                                                  |
+| Detailed Description | Saves a users' chosen Location to the database          |
+| Output               | Boolean, To tell the user the action has been completed |
  
 
-| Process No.          | 25          |
-|----------------------|-------------|
-| Title                | getLocation |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 23                                                                     |
+|----------------------|------------------------------------------------------------------------|
+| Title                | getLocation                                                            |
+| Brief Description    | Returns a users' Location                                              |
+| Inputs               | None                                                                   |
+| Detailed Description | Returns the String saved into the database for the selected users' age |
+| Output               | String, Of the users' Location                                         |
 
 
-| Process No.          | 26                  |
+| Process No.          | 24                  |
 |----------------------|---------------------|
 | Title                | calculateReputation |
 | Brief Description    |                     |
@@ -505,7 +486,7 @@ FK - Foreign Key
 | Output               |                     |
 
 
-| Process No.          | 27            |
+| Process No.          | 25            |
 |----------------------|---------------|
 | Title                | getReputation |
 | Brief Description    |               |
@@ -515,7 +496,7 @@ FK - Foreign Key
 
 
 
-| Process No.          | 28      |
+| Process No.          | 26      |
 |----------------------|---------|
 | Title                | setType |
 | Brief Description    |         |
@@ -524,7 +505,7 @@ FK - Foreign Key
 | Output               |         |
 
 
-| Process No.          | 29      |
+| Process No.          | 27      |
 |----------------------|---------|
 | Title                | getType |
 | Brief Description    |         |
@@ -533,7 +514,7 @@ FK - Foreign Key
 | Output               |         |
 
 
-| Process No.          | 30           |
+| Process No.          | 28           |
 |----------------------|--------------|
 | Title                | setInterests |
 | Brief Description    |              |
@@ -542,7 +523,7 @@ FK - Foreign Key
 | Output               |              |
 
 
-| Process No.          | 31           |
+| Process No.          | 29           |
 |----------------------|--------------|
 | Title                | getInterests |
 | Brief Description    |              |
@@ -552,7 +533,7 @@ FK - Foreign Key
 
 
 
-| Process No.          | 32       |
+| Process No.          | 30       |
 |----------------------|----------|
 | Title                | newMatch |
 | Brief Description    |          |
@@ -561,7 +542,7 @@ FK - Foreign Key
 | Output               |          |
 
 
-| Process No.          | 33          |
+| Process No.          | 31          |
 |----------------------|-------------|
 | Title                | removeMatch |
 | Brief Description    |             |
@@ -570,7 +551,7 @@ FK - Foreign Key
 | Output               |             |
 
 
-| Process No.          | 34                  |
+| Process No.          | 32                  |
 |----------------------|---------------------|
 | Title                | setMatchesRemaining |
 | Brief Description    |                     |
@@ -579,7 +560,7 @@ FK - Foreign Key
 | Output               |                     |
  
 
-| Process No.          | 35                  |
+| Process No.          | 33                  |
 |----------------------|---------------------|
 | Title                | getMatchesRemaining |
 | Brief Description    |                     |
@@ -588,7 +569,7 @@ FK - Foreign Key
 | Output               |                     |
  
 
-| Process No.          | 36          |
+| Process No.          | 34          |
 |----------------------|-------------|
 | Title                | sendMessage |
 | Brief Description    |             |
@@ -597,7 +578,7 @@ FK - Foreign Key
 | Output               |             |
 
 
-| Process No.          | 37          |
+| Process No.          | 35          |
 |----------------------|-------------|
 | Title                | getMessages |
 | Brief Description    |             |
@@ -606,7 +587,7 @@ FK - Foreign Key
 | Output               |             |
 
 
-| Process No.          | 38      |
+| Process No.          | 36      |
 |----------------------|---------|
 | Title                | setRead |
 | Brief Description    |         |
@@ -615,7 +596,7 @@ FK - Foreign Key
 | Output               |         |
  
 
-| Process No.          | 39       |
+| Process No.          | 37       |
 |----------------------|----------|
 | Title                | sendLike |
 | Brief Description    |          |
@@ -624,7 +605,7 @@ FK - Foreign Key
 | Output               |          |
  
 
-| Process No.          | 40       |
+| Process No.          | 38       |
 |----------------------|----------|
 | Title                | getLikes |
 | Brief Description    |          |
@@ -633,7 +614,7 @@ FK - Foreign Key
 | Output               |          |
  
 
-| Process No.          | 41        |
+| Process No.          | 39        |
 |----------------------|-----------|
 | Title                | blockUser |
 | Brief Description    |           |
@@ -642,7 +623,7 @@ FK - Foreign Key
 | Output               |           |
 
 
-| Process No.          | 42          |
+| Process No.          | 40          |
 |----------------------|-------------|
 | Title                | unblockUser |
 | Brief Description    |             |
@@ -651,7 +632,7 @@ FK - Foreign Key
 | Output               |             |
  
 
-| Process No.          | 43        |
+| Process No.          | 41        |
 |----------------------|-----------|
 | Title                | setStatus |
 | Brief Description    |           |
@@ -660,7 +641,7 @@ FK - Foreign Key
 | Output               |           |
  
 
-| Process No.          | 44        |
+| Process No.          | 42        |
 |----------------------|-----------|
 | Title                | getStatus |
 | Brief Description    |           |
@@ -669,7 +650,7 @@ FK - Foreign Key
 | Output               |           |
 
 
-| Process No.          | 45         |
+| Process No.          | 43         |
 |----------------------|------------|
 | Title                | sendReport |
 | Brief Description    |            |
@@ -678,7 +659,7 @@ FK - Foreign Key
 | Output               |            |
 
 
-| Process No.          | 46              |
+| Process No.          | 44              |
 |----------------------|-----------------|
 | Title                | getReportStatus |
 | Brief Description    |                 |
@@ -687,7 +668,7 @@ FK - Foreign Key
 | Output               |                 | 
 
 
-| Process No.          | 47            |
+| Process No.          | 45            |
 |----------------------|---------------|
 | Title                | resolveReport |
 | Brief Description    |               |
@@ -696,7 +677,7 @@ FK - Foreign Key
 | Output               |               |
  
 
-| Process No.          | 48      |
+| Process No.          | 46      |
 |----------------------|---------|
 | Title                | banUser |
 | Brief Description    |         |
@@ -705,7 +686,7 @@ FK - Foreign Key
 | Output               |         |
  
 
-| Process No.          | 49        |
+| Process No.          | 47        |
 |----------------------|-----------|
 | Title                | unbanUser |
 | Brief Description    |           |
@@ -713,5 +694,18 @@ FK - Foreign Key
 | Detailed Description |           |
 | Output               |           |
 
+| Process No.          | 48        |
+|----------------------|-----------|
+| Title                | setGender |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
 
-
+| Process No.          | 49        |
+|----------------------|-----------|
+| Title                | getGender |
+| Brief Description    |           |
+| Inputs               |           |
+| Detailed Description |           |
+| Output               |           |
