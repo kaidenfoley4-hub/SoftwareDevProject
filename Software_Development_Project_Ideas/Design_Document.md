@@ -284,15 +284,58 @@ It's necessary in our database to link each image to the right person and explic
 
 ### User
 
-#### Path Index
-
 #### Login
+
+```mermaid
+flowchart TD
+ id0(["Login Page"]) --> id1{"Is the user signed in?"}
+ id1 --> |Yes                      | id2(["Show Index WebPage"])
+ id1 --> |No                       | id3(["Show Login Form"])
+ id3 --> |user attempts to Log In  | id5{"Valid Login?"}
+ id6 --> |user                     | id2
+ id5 --> |No                       | id3
+ id3 --> |user Registers           | id4("Redirect to Register Page")
+ id5 --> |Yes                      | id6{"Check Role?"}
+ id6 --> |admin                    | id7("Show Admin WebPage")
+```
 
 #### Registration
 
+```mermaid
+flowchart TD
+    id0(["Register WebPage"]) --> id1(["UserProfile Form"])
+    id1 --> |Profile Filled In| id2(["Show Index WebPage"])
+```
+
 #### Index page
 
-#### Inbox
+```mermaid
+flowchart TD
+    id0(["Show Index WebPage"])
+    id0 --> |Messages       | id1(["Show Messages with other User"])
+    id0 --> |Matches        | id2(["Show Current Matches"])
+    id0 --> |Guidelines     | id3(["Show Guidelines WebPage"])
+    id0 --> |EditAccount    | id4(["Show EditAccount WebPage"])
+    id0 --> |Show other user| id5{"Like?"}
+    id5 --> |Yes| id6(["Add to Liked User and show next available user"])
+    id5 --> |Yes| id7(["Show next available user"])
+```
+
+#### Edit Account
+
+```mermaid
+flowchart TD
+    id0(["Show Index WebPage"])
+    id0 --> |Upload Profile Picture | id1(["Show Profile with Changes"])
+    id0 --> |Edit Bio               | id1
+    id0 --> |Edit Page X content    | id1
+    id0 --> |Age Range              | id1
+    id0 --> |Sexuality              | id1
+    id0 --> |Preferred Location     | id1
+```
+
+
+#### 
 
 ### Admin
 
