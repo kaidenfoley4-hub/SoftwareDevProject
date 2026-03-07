@@ -109,7 +109,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### User set-up Table
 | Field            | Type                                       | KeyType |
-| ---------------- | ------------------------------------------ | ------- |
+|------------------|--------------------------------------------|---------|
 | user_id          | INT                                        | PK      |
 | username         | VARCHAR                                    | UNIQUE  |
 | email            | VARCHAR                                    | UNIQUE  |
@@ -128,20 +128,20 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Permissible Interests Table
 | Field         | Type    | KeyType |
-| ------------- | ------- | ------- |
+|---------------|---------|---------|
 | interest_id   | INT     | PK      |
 | interest_name | VARCHAR | UNIQUE  |
 
 ### User interest Table
 | Field       | Type | KeyType                        |
-| ----------- | ---- | ------------------------------ |
+|-------------|------|--------------------------------|
 | user_id     | INT  | PK, FK → users.user_id         |
 | interest_id | INT  | PK, FK → interests.interest_id |
 
 
 ### Preferences Table
 | Field             | Type                                             | KeyType                |
-| ----------------- | ------------------------------------------------ | ---------------------- |
+|-------------------|--------------------------------------------------|------------------------|
 | user_id           | INT                                              | PK, FK → users.user_id |
 | min_age           | INT                                              |                        |
 | max_age           | INT                                              |                        |
@@ -151,14 +151,14 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Likes Table
 | Field      | Type      | KeyType                |
-| ---------- | --------- | ---------------------- |
+|------------|-----------|------------------------|
 | liker_id   | INT       | PK, FK → users.user_id |
 | liked_id   | INT       | PK, FK → users.user_id |
 | created_at | TIMESTAMP |                        |
 
 ### Matches Table
 | Field      | Type                                 | KeyType            |
-| ---------- | ------------------------------------ | ------------------ |
+|------------|--------------------------------------|--------------------|
 | match_id   | INT                                  | PK                 |
 | user1_id   | INT                                  | FK → users.user_id |
 | user2_id   | INT                                  | FK → users.user_id |
@@ -169,7 +169,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Messages Table
 | Field        | Type                 | KeyType               |
-| ------------ | -------------------- | --------------------- |
+|--------------|----------------------|-----------------------|
 | message_id   | INT                  | PK                    |
 | match_id     | INT                  | FK → matches.match_id |
 | sender_id    | INT                  | FK → users.user_id    |
@@ -181,7 +181,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Blocks Table
 | Field      | Type      | KeyType            |
-| ---------- | --------- | ------------------ |
+|------------|-----------|--------------------|
 | block_id   | INT       | PK                 |
 | blocker_id | INT       | FK → users.user_id |
 | blocked_id | INT       | FK → users.user_id |
@@ -190,7 +190,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 ### Reports Table
 | Field            | Type                                    | KeyType            |
-| ---------------- | --------------------------------------- | ------------------ |
+|------------------|-----------------------------------------|--------------------|
 | report_id        | INT                                     | PK                 |
 | reporter_id      | INT                                     | FK → users.user_id |
 | reported_user_id | INT                                     | FK → users.user_id |
