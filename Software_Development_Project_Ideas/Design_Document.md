@@ -171,7 +171,7 @@ By restricting selections to a consistent set of unique tags rather than free-te
 | interest_name | VARCHAR | UNIQUE  |
 
 ### User interest Table
-This table acts as a crucial bridge in our database, linking individual members directly to their chosen hobbies from the permissible interests list. By matching a user_id with an interest_id,
+This table links individual members directly to their chosen hobbies from the permissible interests list. By matching a user_id with an interest_id,
 this junction table efficiently tracks the specific interests of our users, which directly powers our platform's ability to search and filter profiles based on shared passions.
 
 | Field       | Type | KeyType                        |
@@ -181,7 +181,7 @@ this junction table efficiently tracks the specific interests of our users, whic
 
 
 ### Preferences Table
-This table stores the specific dating criteria for each individual in our database, fulfilling the requirement to capture user preferences. By keeping track of requirements like preferred age ranges and locations,
+This table stores the specific dating criteria for each individual in our database, fulfilling the requirement to capture user preferences. By keeping track of requirements like preferred age ranges and county,
 it allows our system to proactively suggest compatible matches. Furthermore, it provides the exact data structure we need to power the required search and filtering functionality.
 
 | Field             | Type                                             | KeyType                |
@@ -206,7 +206,7 @@ it allows our platform to manage user connection to be used in the matching proc
 ### Matches Table
 This table records the established connections within our database when two users successfully express mutual interest. By tracking the exact status of a relationship (such as active,
 unmatched, or blocked), it enables our platform to manage clear state transitions and allows users to securely view their existing matches. This table also
-includes a compatibility score to help us proactively evaluate and suggest high-quality pairings based on user preferences.
+includes a compatibility score associated with each match to help us proactively evaluate and suggest high-quality pairings based on user preferences.
 
 | Field                     | Type                                 | KeyType            |
 |---------------------------|--------------------------------------|--------------------|
