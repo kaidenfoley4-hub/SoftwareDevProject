@@ -437,13 +437,13 @@ Matched users must be able to communicate through an **internal messaging system
 | Output               | Boolean, To tell the user the action has been completed |
  
 
-| Process No.          | 23                                                                     |
-|----------------------|------------------------------------------------------------------------|
-| Title                | getLocation                                                            |
-| Brief Description    | Returns a users' Location                                              |
-| Inputs               | None                                                                   |
-| Detailed Description | Returns the String saved into the database for the selected users' age |
-| Output               | String, Of the users' Location                                         |
+| Process No.          | 23                                                                          |
+|----------------------|-----------------------------------------------------------------------------|
+| Title                | getLocation                                                                 |
+| Brief Description    | Returns a users' Location                                                   |
+| Inputs               | None                                                                        |
+| Detailed Description | Returns the String saved into the database for the selected users' Location |
+| Output               | String, Of the users' Location                                              |
 
 
 | Process No.          | 24                  |
@@ -465,40 +465,37 @@ Matched users must be able to communicate through an **internal messaging system
 
 
 
-| Process No.          | 26      |
-|----------------------|---------|
-| Title                | setType |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 26                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setType                                                 |
+| Brief Description    | Let's a user set their Type                             |
+| Inputs               | Enum                                                    |
+| Detailed Description | Saves a users' chosen Type to the database              |
+| Output               | Boolean, To tell the user the action has been completed |
 
+| Process No.          | 27                                                                    |
+|----------------------|-----------------------------------------------------------------------|
+| Title                | getType                                                               |
+| Brief Description    | Returns a users' Type                                                 |
+| Inputs               | None                                                                  |
+| Detailed Description | Returns the Enum saved into the database for the selected users' Type |
+| Output               | Enum, Of the users' Type                                              |
 
-| Process No.          | 27      |
-|----------------------|---------|
-| Title                | getType |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 28                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setInterests                                            |
+| Brief Description    | Let's a user set their Interests                        |
+| Inputs               | Enum                                                    |
+| Detailed Description | Saves a users' chosen Interests to the database         |
+| Output               | Boolean, To tell the user the action has been completed |
 
-
-| Process No.          | 28           |
-|----------------------|--------------|
-| Title                | setInterests |
-| Brief Description    |              |
-| Inputs               |              |
-| Detailed Description |              |
-| Output               |              |
-
-
-| Process No.          | 29           |
-|----------------------|--------------|
-| Title                | getInterests |
-| Brief Description    |              |
-| Inputs               |              |
-| Detailed Description |              |
-| Output               |              |
+| Process No.          | 29                                                                         |
+|----------------------|----------------------------------------------------------------------------|
+| Title                | getInterests                                                               |
+| Brief Description    | Returns a users' Interests                                                 |
+| Inputs               | None                                                                       |
+| Detailed Description | Returns the Enum saved into the database for the selected users' Interests |
+| Output               | Enum of the users' Type                                                    |
 
 
 
