@@ -310,7 +310,7 @@ It's necessary in our database to link each image to the right person and explic
 | Brief Description    | Validates a users credentials when registering                                                                                                                                                                                                                                                                                        |
 | Inputs               | Username, Email, Password                                                                                                                                                                                                                                                                                                             |
 | Detailed Description | Validates that an account does not already exist with the username or email a user is attempting to register with. If an account exists in the database with either of these an error pops up and the user is prompted to enter new credentials. If these credentials are not found, the createAccount process is allowed to proceed. |
-| Outputs              | None                                                                                                                                                                                                                                                                                                                                  |
+| Outputs              | userID                                                                                                                                                                                                                                                                                                                                  |
 
 
 | Process No.          | 2                                                                                            |
@@ -380,7 +380,7 @@ It's necessary in our database to link each image to the right person and explic
 |----------------------|------------------------------------------------------------------------|
 | Title                | getProfile                                                             |
 | Brief Description    | Return a representation of the selected users profile                  |
-| Inputs               | None                                                                   |
+| Inputs               | userID                                                                   |
 | Detailed Description | This function will return a text version of the selected users profile |
 | Output               | A String with all the information about the selected users profile     |
 
@@ -416,7 +416,7 @@ It's necessary in our database to link each image to the right person and explic
 |----------------------|--------------------------------------------------------|
 | Title                | getProfilePhoto                                        |
 | Brief Description    | Allows a user to check the set profile photo           |
-| Inputs               | None                                                   |
+| Inputs               | userID                                                   |
 | Detailed Description | Let's a user get the photos set to their profile photo |
 | Output               | Zip file with the image                                |
 
@@ -433,7 +433,7 @@ It's necessary in our database to link each image to the right person and explic
 |----------------------|------------------------------------------------------------|
 | Title                | getAdditionalPhotos                                        |
 | Brief Description    | Allows a user to check the set additional photos           |
-| Inputs               | None                                                       |
+| Inputs               | userID                                                       |
 | Detailed Description | Let's a user get the photos set to their additional photos |
 | Output               | Zip file with the images                                   |
 
@@ -451,7 +451,7 @@ It's necessary in our database to link each image to the right person and explic
 |----------------------|-----------------------------------------------------------------------------|
 | Title                | getBio                                                                      |
 | Brief Description    | Returns the Bio for the selected users profile                              |
-| Inputs               | None                                                                        |
+| Inputs               | userID                                                                        |
 | Detailed Description | Returns the String that has been saved into the database for the users' Bio |
 | Output               | String, of the attached Bio                                                 |
 
@@ -469,7 +469,7 @@ It's necessary in our database to link each image to the right person and explic
 |----------------------|------------------------------------------------------------------------------|
 | Title                | getName                                                                      |
 | Brief Description    | Returns the Name for the selected user                                       |
-| Inputs               | None                                                                         |
+| Inputs               | userID                                                                         |
 | Detailed Description | Returns the String that has been saved into the database for the users' Name |
 | Output               | String                                                                       |
 
@@ -487,7 +487,7 @@ It's necessary in our database to link each image to the right person and explic
 |----------------------|---------------------------------------------------------------------|
 | Title                | getAge                                                              |
 | Brief Description    | Returns a users' Age                                                |
-| Inputs               | None                                                                |
+| Inputs               | userID                                                                |
 | Detailed Description | Returns the Int saved into the database for the selected users' age |
 | Output               | Int, Of the users' Age                                              |
 
@@ -500,13 +500,13 @@ It's necessary in our database to link each image to the right person and explic
 | Output               | Boolean, To tell the user the action has been completed |
  
 
-| Process No.          | 23                                                                     |
-|----------------------|------------------------------------------------------------------------|
-| Title                | getLocation                                                            |
-| Brief Description    | Returns a users' Location                                              |
-| Inputs               | None                                                                   |
-| Detailed Description | Returns the String saved into the database for the selected users' age |
-| Output               | String, Of the users' Location                                         |
+| Process No.          | 23                                                                          |
+|----------------------|-----------------------------------------------------------------------------|
+| Title                | getLocation                                                                 |
+| Brief Description    | Returns a users' Location                                                   |
+| Inputs               | userID                                                                        |
+| Detailed Description | Returns the String saved into the database for the selected users' Location |
+| Output               | String, Of the users' Location                                              |
 
 
 | Process No.          | 24                                                                                                                      |
@@ -528,40 +528,37 @@ It's necessary in our database to link each image to the right person and explic
 
 
 
-| Process No.          | 26      |
-|----------------------|---------|
-| Title                | setType |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 26                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setType                                                 |
+| Brief Description    | Let's a user set their Type                             |
+| Inputs               | Enum                                                    |
+| Detailed Description | Saves a users' chosen Type to the database              |
+| Output               | Boolean, To tell the user the action has been completed |
 
+| Process No.          | 27                                                                    |
+|----------------------|-----------------------------------------------------------------------|
+| Title                | getType                                                               |
+| Brief Description    | Returns a users' Type                                                 |
+| Inputs               | userID                                                                  |
+| Detailed Description | Returns the Enum saved into the database for the selected users' Type |
+| Output               | Enum, Of the users' Type                                              |
 
-| Process No.          | 27      |
-|----------------------|---------|
-| Title                | getType |
-| Brief Description    |         |
-| Inputs               |         |
-| Detailed Description |         |
-| Output               |         |
+| Process No.          | 28                                                      |
+|----------------------|---------------------------------------------------------|
+| Title                | setInterests                                            |
+| Brief Description    | Let's a user set their Interests                        |
+| Inputs               | Enum                                                    |
+| Detailed Description | Saves a users' chosen Interests to the database         |
+| Output               | Boolean, To tell the user the action has been completed |
 
-
-| Process No.          | 28           |
-|----------------------|--------------|
-| Title                | setInterests |
-| Brief Description    |              |
-| Inputs               |              |
-| Detailed Description |              |
-| Output               |              |
-
-
-| Process No.          | 29           |
-|----------------------|--------------|
-| Title                | getInterests |
-| Brief Description    |              |
-| Inputs               |              |
-| Detailed Description |              |
-| Output               |              |
+| Process No.          | 29                                                                         |
+|----------------------|----------------------------------------------------------------------------|
+| Title                | getInterests                                                               |
+| Brief Description    | Returns a users' Interests                                                 |
+| Inputs               | userID                                                                       |
+| Detailed Description | Returns the Enum saved into the database for the selected users' Interests |
+| Output               | Enum of the users' Type                                                    |
 
 
 
