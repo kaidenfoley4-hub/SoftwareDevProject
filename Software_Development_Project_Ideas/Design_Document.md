@@ -136,9 +136,11 @@ PK - Primary Key
 
 FK - Foreign Key
 
-
-
 ### User set-up Table
+ This table serves as the foundational database structure for the dating platform, handling account registration, personal profile details,and secure login credentials. 
+ Additionally, it includes crucial fields like role and ban status to support the required administrative controls for managing 
+and moderating the user base.
+
 | Field             | Type                                       | KeyType |
 |-------------------|--------------------------------------------|---------|
 | user_id           | INT                                        | PK      |
@@ -147,7 +149,7 @@ FK - Foreign Key
 | password_hash     | VARCHAR                                    |         |
 | role              | ENUM('user','admin')                       |         |
 | gender            | ENUM('male','female','non_binary','other') |         |
-| date_of_birth     | DATE                                       |         |
+| date_of_birth     | DATE                                       |         |    
 | country           | VARCHAR                                    |         |
 | bio               | TEXT                                       |         |
 | reputation_score  | INT                                        |         |
@@ -160,12 +162,18 @@ FK - Foreign Key
 
 
 ### Permissible Interests Table
+This table acts as a standardized reference dictionary for all the predefined hobbies and passions users can add to their personal profiles. 
+By restricting selections to a consistent set of unique tags rather than free-text entry, it keeps our database clean and makes the required feature of searching and filtering by interests much more accurate and reliable.
+
 | Field         | Type    | KeyType |
 |---------------|---------|---------|
 | interest_id   | INT     | PK      |
 | interest_name | VARCHAR | UNIQUE  |
 
 ### User interest Table
+This table acts as a crucial bridge in our database, linking individual members directly to their chosen hobbies from the permissible interests list. By matching a user_id with an interest_id,
+this junction table efficiently tracks the specific interests of our users, which directly powers our platform's ability to search and filter profiles based on shared passions.
+
 | Field       | Type | KeyType                        |
 |-------------|------|--------------------------------|
 | user_id     | INT  | PK, FK → users.user_id         |
@@ -173,6 +181,9 @@ FK - Foreign Key
 
 
 ### Preferences Table
+This table stores the specific dating criteria for each individual in our database, fulfilling the requirement to capture user preferences. By keeping track of requirements like preferred age ranges and locations,
+it allows our system to proactively suggest compatible matches. Furthermore, it provides the exact data structure we need to power the required search and filtering functionality.
+
 | Field             | Type                                             | KeyType                |
 |-------------------|--------------------------------------------------|------------------------|
 | user_id           | INT                                              | PK, FK → users.user_id |
@@ -183,6 +194,9 @@ FK - Foreign Key
 
 
 ### Likes Table
+This table records every instance where a member of our database expresses interest in another user. By tracking exactly who likes whom, 
+it allows our platform to manage user connection to be used in the matching process.
+
 | Field      | Type      | KeyType                |
 |------------|-----------|------------------------|
 | liker_id   | INT       | PK, FK → users.user_id |
@@ -190,6 +204,10 @@ FK - Foreign Key
 | created_at | TIMESTAMP |                        |
 
 ### Matches Table
+This table records the established connections within our database when two users successfully express mutual interest. By tracking the exact status of a relationship (such as active,
+unmatched, or blocked), it enables our platform to manage clear state transitions and allows users to securely view their existing matches. This table also
+includes a compatibility score to help us proactively evaluate and suggest high-quality pairings based on user preferences.
+
 | Field                     | Type                                 | KeyType            |
 |---------------------------|--------------------------------------|--------------------|
 | match_id                  | INT                                  | PK                 |
@@ -202,6 +220,9 @@ FK - Foreign Key
 | deleted_at                | TIMESTAMP (nullable)                 |                    |
 
 ### Messages Table
+This table powers the internal messaging system in our database, securely facilitating communication between users who have successfully matched. 
+By linking the message text to a specific match id, it ensures conversations only happen between mutual connections and that the timestamps accurately reflect the time of the message.
+
 | Field        | Type                 | KeyType               |
 |--------------|----------------------|-----------------------|
 | message_id   | INT                  | PK                    |
@@ -214,6 +235,10 @@ FK - Foreign Key
 
 
 ### Blocks Table
+This table is for keeping track of exactly who has blocked who in our database. 
+It's necessary so that we can easily stop unwanted interactions and make sure a blocked person can't see or message the user who blocked them. 
+Basically, it handles the privacy side of things to keep the platform safe and comfortable for everyone.
+
 | Field      | Type      | KeyType            |
 |------------|-----------|--------------------|
 | block_id   | INT       | PK                 |
@@ -223,6 +248,10 @@ FK - Foreign Key
 
 
 ### Reports Table
+This table acts as the moderation hub in our database, letting users officially complain about harassment or inappropriate behavior from others. 
+It's necessary so that our admin team can track the status of each issue, review specific messages, and decide if someone needs to be banned or suspended. 
+Ultimately, it organizes all these reports so we can effectively moderate the platform.
+
 | Field            | Type                                    | KeyType            |
 |------------------|-----------------------------------------|--------------------|
 | report_id        | INT                                     | PK                 |
@@ -236,6 +265,9 @@ FK - Foreign Key
 
 
 ### Photos Table
+This table stores the links for all the pictures our users upload to create and edit a personal profile. 
+It's necessary in our database to link each image to the right person and explicitly flag their main display picture so people can actually see their potential matches when they browse other users.
+
 | Field            | Type                      | KeyType            |
 |------------------|---------------------------|--------------------|
 | photo_id         | INT                       | PK                 |
@@ -477,22 +509,22 @@ FK - Foreign Key
 | Output               | String, Of the users' Location                                         |
 
 
-| Process No.          | 24                  |
-|----------------------|---------------------|
-| Title                | calculateReputation |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
+| Process No.          | 24                                                                                                                      |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Title                | calculateReputation                                                                                                     |
+| Brief Description    | Calculates and updates a users reputation                                                                               |
+| Inputs               | UserID                                                                                                                  |
+| Detailed Description | Calculates the users reputation score by identifying reports against the user, and updates the recorded reputation      |
+| Output               | Returns updated reputation score. Internal method never seen by the user so does not need to display anything on-screen |
 
 
-| Process No.          | 25            |
-|----------------------|---------------|
-| Title                | getReputation |
-| Brief Description    |               |
-| Inputs               |               |
-| Detailed Description |               |
-| Output               |               |
+| Process No.          | 25                                                                                                                    |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Title                | getReputation                                                                                                         |
+| Brief Description    | Returns the users current reputation score                                                                            |
+| Inputs               | Necessary for process #24. Gets the users current reputation score                                                    |
+| Detailed Description | Retrieves the users reputation score.                                                                                 |
+| Output               | Returns users reputation score. Internal method never seen by the user so does not need to display anything on-screen |
 
 
 
