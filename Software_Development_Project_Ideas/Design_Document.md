@@ -278,7 +278,7 @@ FK - Foreign Key
 | Brief Description    | Validates a users credentials when registering                                                                                                                                                                                                                                                                                        |
 | Inputs               | Username, Email, Password                                                                                                                                                                                                                                                                                                             |
 | Detailed Description | Validates that an account does not already exist with the username or email a user is attempting to register with. If an account exists in the database with either of these an error pops up and the user is prompted to enter new credentials. If these credentials are not found, the createAccount process is allowed to proceed. |
-| Outputs              | None                                                                                                                                                                                                                                                                                                                                  |
+| Outputs              | userID                                                                                                                                                                                                                                                                                                                                  |
 
 
 | Process No.          | 2                                                                                            |
@@ -348,7 +348,7 @@ FK - Foreign Key
 |----------------------|------------------------------------------------------------------------|
 | Title                | getProfile                                                             |
 | Brief Description    | Return a representation of the selected users profile                  |
-| Inputs               | None                                                                   |
+| Inputs               | userID                                                                   |
 | Detailed Description | This function will return a text version of the selected users profile |
 | Output               | A String with all the information about the selected users profile     |
 
@@ -384,7 +384,7 @@ FK - Foreign Key
 |----------------------|--------------------------------------------------------|
 | Title                | getProfilePhoto                                        |
 | Brief Description    | Allows a user to check the set profile photo           |
-| Inputs               | None                                                   |
+| Inputs               | userID                                                   |
 | Detailed Description | Let's a user get the photos set to their profile photo |
 | Output               | Zip file with the image                                |
 
@@ -401,7 +401,7 @@ FK - Foreign Key
 |----------------------|------------------------------------------------------------|
 | Title                | getAdditionalPhotos                                        |
 | Brief Description    | Allows a user to check the set additional photos           |
-| Inputs               | None                                                       |
+| Inputs               | userID                                                       |
 | Detailed Description | Let's a user get the photos set to their additional photos |
 | Output               | Zip file with the images                                   |
 
@@ -419,7 +419,7 @@ FK - Foreign Key
 |----------------------|-----------------------------------------------------------------------------|
 | Title                | getBio                                                                      |
 | Brief Description    | Returns the Bio for the selected users profile                              |
-| Inputs               | None                                                                        |
+| Inputs               | userID                                                                        |
 | Detailed Description | Returns the String that has been saved into the database for the users' Bio |
 | Output               | String, of the attached Bio                                                 |
 
@@ -437,7 +437,7 @@ FK - Foreign Key
 |----------------------|------------------------------------------------------------------------------|
 | Title                | getName                                                                      |
 | Brief Description    | Returns the Name for the selected user                                       |
-| Inputs               | None                                                                         |
+| Inputs               | userID                                                                         |
 | Detailed Description | Returns the String that has been saved into the database for the users' Name |
 | Output               | String                                                                       |
 
@@ -455,7 +455,7 @@ FK - Foreign Key
 |----------------------|---------------------------------------------------------------------|
 | Title                | getAge                                                              |
 | Brief Description    | Returns a users' Age                                                |
-| Inputs               | None                                                                |
+| Inputs               | userID                                                                |
 | Detailed Description | Returns the Int saved into the database for the selected users' age |
 | Output               | Int, Of the users' Age                                              |
 
@@ -472,7 +472,7 @@ FK - Foreign Key
 |----------------------|-----------------------------------------------------------------------------|
 | Title                | getLocation                                                                 |
 | Brief Description    | Returns a users' Location                                                   |
-| Inputs               | None                                                                        |
+| Inputs               | userID                                                                        |
 | Detailed Description | Returns the String saved into the database for the selected users' Location |
 | Output               | String, Of the users' Location                                              |
 
@@ -508,7 +508,7 @@ FK - Foreign Key
 |----------------------|-----------------------------------------------------------------------|
 | Title                | getType                                                               |
 | Brief Description    | Returns a users' Type                                                 |
-| Inputs               | None                                                                  |
+| Inputs               | userID                                                                  |
 | Detailed Description | Returns the Enum saved into the database for the selected users' Type |
 | Output               | Enum, Of the users' Type                                              |
 
@@ -524,7 +524,7 @@ FK - Foreign Key
 |----------------------|----------------------------------------------------------------------------|
 | Title                | getInterests                                                               |
 | Brief Description    | Returns a users' Interests                                                 |
-| Inputs               | None                                                                       |
+| Inputs               | userID                                                                       |
 | Detailed Description | Returns the Enum saved into the database for the selected users' Interests |
 | Output               | Enum of the users' Type                                                    |
 
