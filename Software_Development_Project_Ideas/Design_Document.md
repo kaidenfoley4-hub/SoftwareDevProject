@@ -616,45 +616,45 @@ It's necessary in our database to link each image to the right person and explic
 | Output               | Boolean TRUE, to let the user know the message has been read                                                 |
  
 
-| Process No.          | 36       |
-|----------------------|----------|
-| Title                | sendLike |
-| Brief Description    |          |
-| Inputs               |          |
-| Detailed Description |          |
-| Output               |          |
+| Process No.          | 36                                                                                                                                  |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | sendLike                                                                                                                            |
+| Brief Description    | Sends a like from one user to another.                                                                                              |
+| Inputs               | liker_id, liked_id                                                                                                                  |
+| Detailed Description | Creates a new like in the likes table, using the liker_id and liked_id for identification. It is then given a created_at timestamp. |
+| Output               | Boolean response that the like was successful.                                                                                      |
  
 
-| Process No.          | 37       |
-|----------------------|----------|
-| Title                | getLikes |
-| Brief Description    |          |
-| Inputs               |          |
-| Detailed Description |          |
-| Output               |          |
+| Process No.          | 37                                                                                                                               |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Title                | getLikes                                                                                                                         |
+| Brief Description    | Returns all the likes for a user.                                                                                                |
+| Inputs               | liked_id                                                                                                                         |
+| Detailed Description | Using the liked_id, all of the likes sent to this id are counted and returned when a user wants to see how many likes they have. |
+| Output               | INT amount of likes a user has received                                                                                          |
  
 
-| Process No.          | 38        |
-|----------------------|-----------|
-| Title                | blockUser |
-| Brief Description    |           |
-| Inputs               |           |
-| Detailed Description |           |
-| Output               |           |
+| Process No.          | 38                                                                                                                                                                                             |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | blockUser                                                                                                                                                                                      |
+| Brief Description    | Blocks another user                                                                                                                                                                            |
+| Inputs               | blocker_id, blocked_id                                                                                                                                                                         |
+| Detailed Description | When a user blocks another user, a new block is created in the blocks table with a unique block_id. Both of their individual id's are stored here along with a created_at field for the block. |
+| Output               | Boolean response to inform user that they have successfully blocked the other.                                                                                                                 |
 
 
-| Process No.          | 39          |
-|----------------------|-------------|
-| Title                | unblockUser |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 39                                                                               |
+|----------------------|----------------------------------------------------------------------------------|
+| Title                | unblockUser                                                                      |
+| Brief Description    | Unblocks another user                                                            |
+| Inputs               | block_id                                                                         |
+| Detailed Description | Sets a blocks status to inactive in the blocks table using the block_id.         |
+| Output               | Boolean response to inform user that they have successfully unblocked the other. |
  
 
 | Process No.          | 40        |
 |----------------------|-----------|
-| Title                | setStatus |
+| Title                | setActive |
 | Brief Description    |           |
 | Inputs               |           |
 | Detailed Description |           |
@@ -663,7 +663,7 @@ It's necessary in our database to link each image to the right person and explic
 
 | Process No.          | 41        |
 |----------------------|-----------|
-| Title                | getStatus |
+| Title                | getActive |
 | Brief Description    |           |
 | Inputs               |           |
 | Detailed Description |           |
