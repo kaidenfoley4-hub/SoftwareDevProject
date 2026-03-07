@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="standard.css">
+</head>
+
+<body>
+
+<!-- LEFT SIDEBAR -->
+<div class="sidebar sidebar-left">
+
+    <div class="nav-group">
+        <a class="nav-item" href="home.php">Home</a>
+        <a class="nav-item" href="browse.php">Browse Users</a>
+        <a class="nav-item" href="matches.php">Matches</a>
+        <a class="nav-item" href="profile.php">My Profile</a>
+    </div>
+
+    <div class="nav-group">
+        <a class="nav-item" href="logout.php">Logout</a>
+    </div>
+
+</div>
+
+
+<!-- MAIN ADMIN PANEL -->
+<div class="main-section">
+
+    <h1 class="site-title">Admin Dashboard</h1>
+
+    <div class="card profile-card">
+
+        <div style="width:100%;">
+
+            <h2 class="panel-title">User Management</h2>
+
+            <div class="list-item">
+                <strong>Username:</strong> example_user
+                <br>
+                <button class="button">View Profile</button>
+                <button class="button">Edit Profile</button>
+                <button class="button">Ban User</button>
+            </div>
+
+            <div class="list-item">
+                <strong>Username:</strong> another_user
+                <br>
+                <button class="button">View Profile</button>
+                <button class="button">Edit Profile</button>
+                <button class="button">Ban User</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- RIGHT SIDEBAR -->
+<div class="sidebar sidebar-right">
+
+    <div class="matches-panel">
+
+        <div class="heart"></div>
+        <div class="heart-number">!</div>
+
+    </div>
+
+    <div class="split-panel">
+
+        <!-- REPORTS -->
+        <div class="panel">
+
+            <h3 class="panel-title">Reports</h3>
+
+            <div class="list-item">
+                <strong>User:</strong> reported_user <br>
+                Reason: Harassment <br>
+                <button class="button">Review</button>
+                <button class="button">Dismiss</button>
+            </div>
+
+            <div class="list-item">
+                <strong>User:</strong> spam_account <br>
+                Reason: Spam <br>
+                <button class="button">Review</button>
+                <button class="button">Dismiss</button>
+            </div>
+
+        </div>
+
+        <!-- CONTENT MODERATION -->
+        <div class="panel">
+
+            <h3 class="panel-title">Content Moderation</h3>
+
+            <div class="list-item">
+                <strong>Message Flagged</strong>
+                <br>
+                "inappropriate message text..."
+                <br>
+                <button class="button">Delete Message</button>
+            </div>
+
+            <div class="list-item">
+                <strong>Profile Photo Flagged</strong>
+                <br>
+                <button class="button">Remove Photo</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

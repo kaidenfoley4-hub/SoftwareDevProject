@@ -2,21 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" serverName="Intentional-Dating" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="Intentional-Dating">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="Intentional-Dating (project level)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="Intentional_Dating">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
