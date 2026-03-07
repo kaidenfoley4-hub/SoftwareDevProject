@@ -2,32 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fields & Futures</title>
+    <title>Profile Dashboard - Fields & Futures</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="standard.css">
 </head>
 
 <body>
+
 <!-- Left Sidebar -->
 <aside class="sidebar sidebar-left">
     <div class="nav-group">
         <a class="nav-item" href="EditAccount.html">Edit Account</a>
-        <a class="nav-item" href="profileOverview.html">Profile Dashboard</a>
-    </div>
+        <a class="nav-item" href="index.html">Back to Homepage</a>      </div>
 
     <div class="nav-group">
         <a class="nav-item" href="Guidelines.html">Guidelines</a>
     </div>
 </aside>
 
+
 <!-- Main Section -->
 <main class="main-section">
-    <h1 class="site-title">Fields & Futures</h1>
 
-    <div class="card profile-card">
-        Main screen where profiles appear for consideration
+    <h1 class="site-title">Profile Dashboard</h1>
+
+    <div class="dashboard-grid">
+
+        <div class="card dashboard-card">
+            <h3 class="panel-title">Profile Completion</h3>
+            <div class="stat-number">85%</div>
+        </div>
+
+        <div class="card dashboard-card">
+            <h3 class="panel-title">Profile Views</h3>
+            <div class="stat-number">42</div>
+        </div>
+
+        <div class="card dashboard-card">
+            <h3 class="panel-title">Reputation Score</h3>
+            <div class="stat-number">73</div>
+        </div>
+
+        <div class="card dashboard-card">
+            <h3 class="panel-title">Last Login</h3>
+            <div class="stat-text">Today at 14:32</div>
+        </div>
+
+        <div class="card dashboard-card warning-card">
+            <h3 class="panel-title">Account Status</h3>
+            <div class="stat-text">No warnings</div>
+        </div>
+
     </div>
+
 </main>
+
 
 <!-- Right Sidebar -->
 <aside class="sidebar sidebar-right">
@@ -36,7 +65,9 @@
         <div class="heart"></div>
         <div class="heart-number">5</div>
     </div>
+
     <div class="split-panel">
+
         <div class="panel">
             <h3 class="panel-title">Messages</h3>
             <div class="list-item">Chat with Emma</div>
@@ -48,7 +79,10 @@
             <div class="list-item">Sarah</div>
             <div class="list-item">Daniel</div>
         </div>
+
     </div>
+
 </aside>
+
 </body>
 </html>

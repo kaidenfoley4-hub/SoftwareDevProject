@@ -145,10 +145,6 @@ body {
     overflow-y: auto;
 }
 
-.panel:first-child {
-    border-right: 2px solid #e5c7cc;
-}
-
 .list-item {
     padding: 10px;
     border: 2px solid #e5c7cc;
@@ -454,3 +450,80 @@ body {
     flex: 1;
     padding:5px;
 }
+
+.reported-users-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    width:100%;
+    margin-top:20px;
+}
+
+.reported-user{
+    cursor:pointer;
+    width:100%;
+}
+
+.reported-user:hover{
+    background:#f4f4f4;
+}
+
+.reported-user.active{
+    border:2px solid #ff4d6d;
+}
+
+.sidebar-right{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+}
+
+.profile-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dashboard-card {
+    text-align: center;
+    padding: 25px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.stat-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.warning-card {
+    grid-column: span 2;
+}
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+h4.title {
+    font-size: 60px;
+    color: #c94f7c;
+    margin-bottom: 60px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #000000;
+    font-weight: 600;
+}
+
