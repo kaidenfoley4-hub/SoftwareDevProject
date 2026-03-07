@@ -562,43 +562,34 @@ It's necessary in our database to link each image to the right person and explic
 
 
 
-| Process No.          | 30       |
-|----------------------|----------|
-| Title                | newMatch |
-| Brief Description    |          |
-| Inputs               |          |
-| Detailed Description |          |
-| Output               |          |
+| Process No.          | 30                                                                                                                                            |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Title                | newMatch                                                                                                                                      |
+| Brief Description    | Creates a new match between two users                                                                                                         |
+| Inputs               | user1_id, user2_id                                                                                                                            |
+| Detailed Description | Creates a new entry in the matches table, assigning it a unique match_id. It is given a created_at timestamp and its status is set to active. |
+| Output               | The user is informed that a new match has been created and process 32 is called to decrement their remaining matches.                         |
 
 
-| Process No.          | 31          |
-|----------------------|-------------|
-| Title                | removeMatch |
-| Brief Description    |             |
-| Inputs               |             |
-| Detailed Description |             |
-| Output               |             |
+| Process No.          | 31                                                                                                                            |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| Title                | removeMatch                                                                                                                   |
+| Brief Description    | Changes a matches status                                                                                                      |
+| Inputs               | user1_id, user2_id                                                                                                            |
+| Detailed Description | Changes a matches status from active to inactive/blocked depending on if the match was ended normally, or a user was blocked. |
+| Output               | The user is informed that the match has been removed and process 32 is called to increment their remaining matches.           |
 
 
-| Process No.          | 32                  |
-|----------------------|---------------------|
-| Title                | setMatchesRemaining |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
+| Process No.          | 32                                                                                             |
+|----------------------|------------------------------------------------------------------------------------------------|
+| Title                | matchesRemaining                                                                               |
+| Brief Description    | Sets the number of remaining matches a user has and returns the value                          |
+| Inputs               | user_id                                                                                        |
+| Detailed Description | Checks the matches table for active matches associated with the user_id and updates the value. |
+| Output               | INT                                                                                            ||
  
 
-| Process No.          | 33                  |
-|----------------------|---------------------|
-| Title                | getMatchesRemaining |
-| Brief Description    |                     |
-| Inputs               |                     |
-| Detailed Description |                     |
-| Output               |                     |
- 
-
-| Process No.          | 34          |
+| Process No.          | 33          |
 |----------------------|-------------|
 | Title                | sendMessage |
 | Brief Description    |             |
@@ -607,7 +598,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |             |
 
 
-| Process No.          | 35          |
+| Process No.          | 34          |
 |----------------------|-------------|
 | Title                | getMessages |
 | Brief Description    |             |
@@ -616,7 +607,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |             |
 
 
-| Process No.          | 36      |
+| Process No.          | 35      |
 |----------------------|---------|
 | Title                | setRead |
 | Brief Description    |         |
@@ -625,7 +616,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |         |
  
 
-| Process No.          | 37       |
+| Process No.          | 36       |
 |----------------------|----------|
 | Title                | sendLike |
 | Brief Description    |          |
@@ -634,7 +625,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |          |
  
 
-| Process No.          | 38       |
+| Process No.          | 37       |
 |----------------------|----------|
 | Title                | getLikes |
 | Brief Description    |          |
@@ -643,7 +634,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |          |
  
 
-| Process No.          | 39        |
+| Process No.          | 38        |
 |----------------------|-----------|
 | Title                | blockUser |
 | Brief Description    |           |
@@ -652,7 +643,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |           |
 
 
-| Process No.          | 40          |
+| Process No.          | 39          |
 |----------------------|-------------|
 | Title                | unblockUser |
 | Brief Description    |             |
@@ -661,7 +652,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |             |
  
 
-| Process No.          | 41        |
+| Process No.          | 40        |
 |----------------------|-----------|
 | Title                | setStatus |
 | Brief Description    |           |
@@ -670,7 +661,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |           |
  
 
-| Process No.          | 42        |
+| Process No.          | 41        |
 |----------------------|-----------|
 | Title                | getStatus |
 | Brief Description    |           |
@@ -679,7 +670,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |           |
 
 
-| Process No.          | 43         |
+| Process No.          | 42         |
 |----------------------|------------|
 | Title                | sendReport |
 | Brief Description    |            |
@@ -688,7 +679,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |            |
 
 
-| Process No.          | 44              |
+| Process No.          | 43              |
 |----------------------|-----------------|
 | Title                | getReportStatus |
 | Brief Description    |                 |
@@ -697,7 +688,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |                 | 
 
 
-| Process No.          | 45            |
+| Process No.          | 44            |
 |----------------------|---------------|
 | Title                | resolveReport |
 | Brief Description    |               |
@@ -706,7 +697,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |               |
  
 
-| Process No.          | 46      |
+| Process No.          | 45      |
 |----------------------|---------|
 | Title                | banUser |
 | Brief Description    |         |
@@ -715,7 +706,7 @@ It's necessary in our database to link each image to the right person and explic
 | Output               |         |
  
 
-| Process No.          | 47        |
+| Process No.          | 46        |
 |----------------------|-----------|
 | Title                | unbanUser |
 | Brief Description    |           |
@@ -723,7 +714,7 @@ It's necessary in our database to link each image to the right person and explic
 | Detailed Description |           |
 | Output               |           |
 
-| Process No.          | 48        |
+| Process No.          | 47        |
 |----------------------|-----------|
 | Title                | setGender |
 | Brief Description    |           |
@@ -731,7 +722,7 @@ It's necessary in our database to link each image to the right person and explic
 | Detailed Description |           |
 | Output               |           |
 
-| Process No.          | 49        |
+| Process No.          | 48        |
 |----------------------|-----------|
 | Title                | getGender |
 | Brief Description    |           |
