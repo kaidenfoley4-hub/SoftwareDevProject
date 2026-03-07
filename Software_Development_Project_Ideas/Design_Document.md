@@ -339,11 +339,40 @@ flowchart TD
 
 ### Admin
 
-#### Path Index
+#### Admin Actions
 
-#### Login
-
-#### Profile viewing
+```mermaid
+flowchart TD
+    id0(["Admin Logs In"]) --> id1(["Show Admin WebPage"])
+    id1 --> id2["View Reports"]
+    id1 --> id3["Manage Users"]
+    
+    id2 --> id4{"Select Report"}
+    id4 --> id5["Review Report Details"]
+    id5 --> id6{"Admin Decision"}
+    id6 --> |Dismiss| id7["resolveReport \n Status: Dismissed"]
+    id6 --> |Reviewed| id8["resolveReport \n Status: Reviewed"]
+    id8 --> id9{"Action Required?"}
+    id9 --> |Yes| id12["banUser \n is_banned = TRUE"]
+    id9 --> |No| id1
+    id7 --> id1
+    
+    id3 --> id10{"Select User"}
+    id10 --> id11["View User Info \n getProfile"]
+    id11 --> id13{"User Currently Banned?"}
+    
+    id13 --> |No| id14{"Take Action?"}
+    id14 --> |Yes| id12["banUser \n is_banned = TRUE"]
+    id14 --> |No Action| id1
+    id12 --> id15(["User is Banned"])
+    id15 --> id1
+    
+    id13 --> |Yes| id16{"Unban?"}
+    id16 --> |Yes| id17["unbanUser \n is_banned = FALSE"]
+    id16 --> |No| id1
+    id17 --> id18(["User is Unbanned"])
+    id18 --> id1
+```
 
 ## Process Tables
 
