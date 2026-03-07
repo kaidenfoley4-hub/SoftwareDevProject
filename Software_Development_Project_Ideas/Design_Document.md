@@ -122,6 +122,12 @@ Matched users must be able to communicate through an **internal messaging system
 
 ![Guidelines](Photos\GuidelinePage.png)
 
+#### Profile Overview page
+![ProfileDashboard.png](Photos/ProfileDashboard.png)
+
+#### Admin Dashboard page
+![AdminDashboard.png](Photos/AdminDashboard.png)
+
 ## Database Tables
 
 ### Dictionary:
