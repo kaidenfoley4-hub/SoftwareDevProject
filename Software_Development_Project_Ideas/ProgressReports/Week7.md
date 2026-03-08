@@ -12,7 +12,14 @@ Look into getting the other pages using bootstrap and any future pages should us
 
 ## Enda
 ### Work Completed Week 6 -
+Finished the guidelines page inputting the intended use and rules.
+Did small UI changes to make divs dynamic and not overlapping on resolution changes.
+Started the high level functionality in the design document.
+Researched how to host the website and what would be the best company to do it.
 ### To-Do Week 7 -
+Look at improving the UI and making the website look more modern.
+Get the website hosted with James
+Help James with implementing the sql database
 
 ## Kaiden
 ### Work Completed Week 6 -
