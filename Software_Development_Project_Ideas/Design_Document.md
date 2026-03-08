@@ -352,8 +352,7 @@ flowchart TD
     id1 --> id3["Manage Users"]
     
     id2 --> id4{"Select Report"}
-    id4 --> id5["Review Report Details"]
-    id5 --> id6{"Admin Decision"}
+    id4 --> id6{"Admin Decision"}
     id6 --> |Dismiss| id7["resolveReport \n Status: Dismissed"]
     id6 --> |Reviewed| id8["resolveReport \n Status: Reviewed"]
     id8 --> id9{"Action Required?"}
