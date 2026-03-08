@@ -26,7 +26,7 @@ thoughtful alternative to mainstream dating platforms by prioritising authentici
 ## High-Level Functionality 
 On Fields & Futures, there are two types of users, admin users and basic users. The basic users can create their account by inputting an email, username, and a password. After creating 
 an account, the user is brought to the user profile page to add their profile pic, bio, personal details, interests, and search settings to their user account. After filling in these 
-fields, the user is directed to the main page where they can start matching with other users based on their interests. On this main page, the user has the options to view the website 
+fields, the user is directed to the main page where they can start matching with other users based on their interests. On this main page, the user has the option to view the website 
 guidelines, chat with users they have matched with, and to edit their profile further. 
 
 Users are matched with other users based off of a "Compatibility Score" determined by the matching interests between users,
@@ -184,14 +184,17 @@ this junction table efficiently tracks the specific interests of our users, whic
 ### Preferences Table
 This table stores the specific dating criteria for each individual in our database, fulfilling the requirement to capture user preferences. By keeping track of requirements like preferred age ranges and county,
 it allows our system to proactively suggest compatible matches. Furthermore, it provides the exact data structure we need to power the required search and filtering functionality.
-
-| Field             | Type                                             | KeyType                |
-|-------------------|--------------------------------------------------|------------------------|
-| user_id           | INT                                              | PK, FK → users.user_id |
-| min_age           | INT                                              |                        |
-| max_age           | INT                                              |                        |
-| preferred_gender  | ENUM('male','female','non_binary','other','any') |                        |
-| preferred_country | VARCHAR                                          |                        |
+ 
+ | Field            | Type                                        | KeyType                |
+ |------------------|---------------------------------------------|------------------------|
+ | user_id          | INT                                         | PK, FK → users.user_id |
+ | min_age          | INT                                         |                        |
+ | max_age          | INT                                         |                        |
+ | prefers_male       | BOOLEAN            |                        |
+ | prefers_female     | BOOLEAN            |                        |
+ | prefers_non_binary | BOOLEAN            |                        |
+ | prefers_other      | BOOLEAN            |                        |
+ | preferred_county   | VARCHAR (Nullable) |                        |
 
 
 ### Likes Table
