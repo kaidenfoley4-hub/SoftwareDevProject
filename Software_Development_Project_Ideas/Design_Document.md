@@ -2,7 +2,8 @@
 
 ## Fields & Futures 
 
-### Group 2 - Members 
+### Group 2 - Members
+
 
 James Connolly 23388102
 Enda Buckley 2358165
@@ -215,7 +216,7 @@ Matched users must be able to communicate through an **internal messaging system
 
 
 ### Entity Relationship Diagram
-![ERD.png](Photos/ERD.png)
+![EntityRelationshipDiagram.png](Photos/EntityRelationshipDiagram.png)
 
 ## Process Chart List
 
