@@ -28,4 +28,11 @@ Refine the gender and sexuality lists and make the mapping chart, Assumption: Us
 
 ## James
 ### Work Completed Week 6 -
+Worked on finalising the database tables and creating the entity relationship diagram.
+Created the admin dashboard page and user profile overview page. Added dynamic hyperlinks to the navigation bar buttons to make page navigation easier depending on what page the user currently is on.
+Added database table descriptions to the design document.
+
 ### To-Do Week 7 - 
+Begin implementing the existing database tables with the website. Work on setting up the website to be hosted on a web server as opposed to locally.
+Solidify the logic behind recompensing user profiles to other users based on gender preferences, interests, etc.
+Fix the issue on the edit profile page where one slider side is difficult to click.
