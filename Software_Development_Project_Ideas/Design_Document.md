@@ -163,7 +163,7 @@ and moderating the user base.
 
 
 ### Permissible Interests Table
-This table acts as a standardized reference dictionary for all the predefined hobbies and passions users can add to their personal profiles. 
+This table acts as a standardised reference dictionary for all the predefined hobbies and passions users can add to their personal profiles. 
 By restricting selections to a consistent set of unique tags rather than free-text entry, it keeps our database clean and makes the required feature of searching and filtering by interests much more accurate and reliable.
 
 | Field         | Type    | KeyType |
@@ -185,11 +185,11 @@ this junction table efficiently tracks the specific interests of our users, whic
 This table stores the specific dating criteria for each individual in our database, fulfilling the requirement to capture user preferences. By keeping track of requirements like preferred age ranges and county,
 it allows our system to proactively suggest compatible matches. Furthermore, it provides the exact data structure we need to power the required search and filtering functionality.
  
- | Field            | Type                                        | KeyType                |
- |------------------|---------------------------------------------|------------------------|
- | user_id          | INT                                         | PK, FK → users.user_id |
- | min_age          | INT                                         |                        |
- | max_age          | INT                                         |                        |
+ | Field              | Type               | KeyType                |
+ |--------------------|--------------------|------------------------|
+ | user_id            | INT                | PK, FK → users.user_id |
+ | min_age            | INT                |                        |
+ | max_age            | INT                |                        |
  | prefers_male       | BOOLEAN            |                        |
  | prefers_female     | BOOLEAN            |                        |
  | prefers_non_binary | BOOLEAN            |                        |
@@ -252,9 +252,9 @@ Basically, it handles the privacy side of things to keep the platform safe and c
 
 
 ### Reports Table
-This table acts as the moderation hub in our database, letting users officially complain about harassment or inappropriate behavior from others. 
+This table acts as the moderation hub in our database, letting users officially complain about harassment or inappropriate behaviour from others. 
 It's necessary so that our admin team can track the status of each issue, review specific messages, and decide if someone needs to be banned or suspended. 
-Ultimately, it organizes all these reports so we can effectively moderate the platform.
+Ultimately, it organises all these reports so we can effectively moderate the platform.
 
 | Field            | Type                                    | KeyType            |
 |------------------|-----------------------------------------|--------------------|
@@ -386,7 +386,7 @@ flowchart TD
 | Brief Description    | Validates a users credentials when registering                                                                                                                                                                                                                                                                                        |
 | Inputs               | Username, Email, Password                                                                                                                                                                                                                                                                                                             |
 | Detailed Description | Validates that an account does not already exist with the username or email a user is attempting to register with. If an account exists in the database with either of these an error pops up and the user is prompted to enter new credentials. If these credentials are not found, the createAccount process is allowed to proceed. |
-| Outputs              | userID                                                                                                                                                                                                                                                                                                                                  |
+| Outputs              | userID                                                                                                                                                                                                                                                                                                                                |
 
 
 | Process No.          | 2                                                                                            |
@@ -456,7 +456,7 @@ flowchart TD
 |----------------------|------------------------------------------------------------------------|
 | Title                | getProfile                                                             |
 | Brief Description    | Return a representation of the selected users profile                  |
-| Inputs               | userID                                                                   |
+| Inputs               | userID                                                                 |
 | Detailed Description | This function will return a text version of the selected users profile |
 | Output               | A String with all the information about the selected users profile     |
 
@@ -492,7 +492,7 @@ flowchart TD
 |----------------------|--------------------------------------------------------|
 | Title                | getProfilePhoto                                        |
 | Brief Description    | Allows a user to check the set profile photo           |
-| Inputs               | userID                                                   |
+| Inputs               | userID                                                 |
 | Detailed Description | Let's a user get the photos set to their profile photo |
 | Output               | Zip file with the image                                |
 
@@ -509,7 +509,7 @@ flowchart TD
 |----------------------|------------------------------------------------------------|
 | Title                | getAdditionalPhotos                                        |
 | Brief Description    | Allows a user to check the set additional photos           |
-| Inputs               | userID                                                       |
+| Inputs               | userID                                                     |
 | Detailed Description | Let's a user get the photos set to their additional photos |
 | Output               | Zip file with the images                                   |
 
@@ -527,7 +527,7 @@ flowchart TD
 |----------------------|-----------------------------------------------------------------------------|
 | Title                | getBio                                                                      |
 | Brief Description    | Returns the Bio for the selected users profile                              |
-| Inputs               | userID                                                                        |
+| Inputs               | userID                                                                      |
 | Detailed Description | Returns the String that has been saved into the database for the users' Bio |
 | Output               | String, of the attached Bio                                                 |
 
@@ -545,7 +545,7 @@ flowchart TD
 |----------------------|------------------------------------------------------------------------------|
 | Title                | getName                                                                      |
 | Brief Description    | Returns the Name for the selected user                                       |
-| Inputs               | userID                                                                         |
+| Inputs               | userID                                                                       |
 | Detailed Description | Returns the String that has been saved into the database for the users' Name |
 | Output               | String                                                                       |
 
@@ -563,7 +563,7 @@ flowchart TD
 |----------------------|---------------------------------------------------------------------|
 | Title                | getAge                                                              |
 | Brief Description    | Returns a users' Age                                                |
-| Inputs               | userID                                                                |
+| Inputs               | userID                                                              |
 | Detailed Description | Returns the Int saved into the database for the selected users' age |
 | Output               | Int, Of the users' Age                                              |
 
@@ -580,7 +580,7 @@ flowchart TD
 |----------------------|-----------------------------------------------------------------------------|
 | Title                | getLocation                                                                 |
 | Brief Description    | Returns a users' Location                                                   |
-| Inputs               | userID                                                                        |
+| Inputs               | userID                                                                      |
 | Detailed Description | Returns the String saved into the database for the selected users' Location |
 | Output               | String, Of the users' Location                                              |
 
@@ -616,7 +616,7 @@ flowchart TD
 |----------------------|-----------------------------------------------------------------------|
 | Title                | getType                                                               |
 | Brief Description    | Returns a users' Type                                                 |
-| Inputs               | userID                                                                  |
+| Inputs               | userID                                                                |
 | Detailed Description | Returns the Enum saved into the database for the selected users' Type |
 | Output               | Enum, Of the users' Type                                              |
 
@@ -632,7 +632,7 @@ flowchart TD
 |----------------------|----------------------------------------------------------------------------|
 | Title                | getInterests                                                               |
 | Brief Description    | Returns a users' Interests                                                 |
-| Inputs               | userID                                                                       |
+| Inputs               | userID                                                                     |
 | Detailed Description | Returns the Enum saved into the database for the selected users' Interests |
 | Output               | Enum of the users' Type                                                    |
 
