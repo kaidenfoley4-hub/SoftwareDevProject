@@ -84,3 +84,9 @@ What will be the submission form
 Tables? Each table should be specific
 ChatGPT prompts
 Plant UML
+
+Zia
+Storing images on the website file structure
+PHP/HTML
+Tied to the free resources or could we use our own webservers such as com soc server / raspberrypi
+Design doc *Database*
