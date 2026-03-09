@@ -92,3 +92,5 @@ Storing images on the website file structure
 PHP/HTML
 Tied to the free resources or could we use our own webservers such as com soc server / raspberrypi
 Design doc *Database*
+Asking about validation for what can be done or should be done for the website
+Standardise file extensions
