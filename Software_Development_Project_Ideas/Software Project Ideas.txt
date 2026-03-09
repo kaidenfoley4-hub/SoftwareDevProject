@@ -88,9 +88,9 @@ Plant UML
 09/03/2026
 Zia Rahman Questions
 
-Storing images on the website file structure
-PHP/HTML
-Tied to the free resources or could we use our own webservers such as com soc server / raspberrypi
+Storing images on the website file structure - webp idea is good
+PHP/HTML - focus more on php but both is good
+Tied to the free resources or could we use our own webservers such as com soc server / raspberrypi. Try free hosting first, can swap to a paid domain or raspberry pi after
 Design doc *Database analysis + any suggestions*
 Asking about validation for what can be done or should be done for the website
-Standardise file extensions
+Standardise file extensions - webp idea is good
