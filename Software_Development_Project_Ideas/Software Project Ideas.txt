@@ -85,7 +85,9 @@ Tables? Each table should be specific
 ChatGPT prompts
 Plant UML
 
-Zia Rahman Jazz
+09/03/2026
+Zia Rahman Questions
+
 Storing images on the website file structure
 PHP/HTML
 Tied to the free resources or could we use our own webservers such as com soc server / raspberrypi
