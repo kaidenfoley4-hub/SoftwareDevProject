@@ -23,6 +23,9 @@ location, and selected interests, with a particular emphasis on rural living and
 users mutually indicate interest, a match is formed, and they are able to communicate through our platform’s internal messaging system. Fields & Futures aims to provide a slower, more 
 thoughtful alternative to mainstream dating platforms by prioritising authenticity and genuine future planning.
 
+
+<br>
+
 ## High-Level Functionality 
 On Fields & Futures, there are two types of users, admin users and basic users. The basic users can create their account by inputting an email, username, and a password. After creating 
 an account, the user is brought to the user profile page to add their profile pic, bio, personal details, interests, and search settings to their user account. After filling in these 
@@ -101,6 +104,12 @@ Matched users must be able to communicate through an **internal messaging system
 ## WebPage Mockups
 
 ### Google-based UI mockups
+
+<br>
+<br>
+
+<br>
+
 
 #### Login page
 

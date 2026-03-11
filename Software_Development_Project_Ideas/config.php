@@ -1,12 +1,13 @@
 <?php
+$servername = "sql210.infinityfree.com";
+$username   = "if0_41315523";
+$password   = "trqOsxZSKf28";
+$dbname     = "if0_41315523_faf";
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "users_db";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-$conn = new mysqli($host, $user, $password, $database);
-
-if ($conn->connect_error) {
-    die("Database connection failed: ". $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+echo "Connected successfully";
+?>

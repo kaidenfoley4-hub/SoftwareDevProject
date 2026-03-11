@@ -1,26 +1,16 @@
 <?php
-
 session_start();
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "users_db";
-
-$conn = new mysqli($host, $user, $password, $database);
-
-if ($conn->connect_error) {
-    die("Database connection failed: ". $conn->connect_error);
-}
+include 'config.php';
 
 if (isset($_POST["register"])) {
     if(isset($_POST["username"])){
-        $username = $_POST["username"];
+        $username = $conn->real_escape_string($_POST["username"]);
     }else{
         print "No username provided";
         exit;
     }
     if(isset($_POST["email"])){
-        $email = $_POST["email"];
+        $email = $conn->real_escape_string($_POST["email"]);
     }else{
         print "No email provided";
         exit;
@@ -32,7 +22,7 @@ if (isset($_POST["register"])) {
         $_SESSION['register_error'] = 'Email already exists';
         $_SESSION["active_form"] = 'register';
     }else {
-        $conn->query("INSERT INTO users (name, email, password) VALUES ('$username', '$email', '$password')");
+        $conn->query("INSERT INTO users (username, email, password_hash) VALUES ('$username', '$email', '$password')");
     }
 
     header("Location: login.php");
@@ -42,18 +32,18 @@ if (isset($_POST["register"])) {
 }
 
 if (isset($_POST["login"])) {
-    $email = $_POST["username/email"];
+    $email = $conn->real_escape_string($_POST["username/email"]);
     $password = $_POST["password"];
 
-    $result = $conn->query("SELECT * FROM users WHERE email='$email'");
+    $result = $conn->query("SELECT * FROM users WHERE email='$email' OR username='$email'");
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        if (password_verify($password, $user["password"])) {
-            $_SESSION["name"] = $user["name"];
+        if (password_verify($password, $user["password_hash"])) {
+            $_SESSION["name"] = $user["username"];
             $_SESSION["email"] = $user["email"];
 
             if($user["role"] === "admin"){
-                header("Location: admin.php");
+                header("Location: admin.html");
             }else {
                 header("Location: UserProfile.html");
             }
@@ -66,3 +56,4 @@ if (isset($_POST["login"])) {
         exit();
     }
 }
+?>
