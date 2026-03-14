@@ -2,8 +2,9 @@
 
 ## William
 ### Work Completed Week 7 -
-
+Worked on some tasks assigned to me on trello such as sending users to the Userprofile page upon first login. Investigated how to implement bootstrap on existing webpages.
 ### To-Do Week 8 -
+Continue working on trello tasks. Need to work on linking the UserProfile page to our new database which is being hosted on Infinityfree. Must start changing existing HTML pages to use bootstrap as this needs to be sorted going forward.
 
 ## Enda
 ### Work Completed Week 7 -
